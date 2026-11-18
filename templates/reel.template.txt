@@ -1,0 +1,29 @@
+title: <Episode title>
+episode: <number>
+level: A1
+topic: <main topic>
+scene: <cafe | street | park | market | restaurant | airport | hotel | store | home | clinic | auto>
+cast: Emma, Mateo
+variety: latam
+duration: 45-60 s
+
+[hook]
+Mateo: <Spanish> | <English> | <pronunciation, optional>
+
+[story]
+Emma: <Spanish> | <English> | <pronunciation, optional>
+Mateo: <Spanish> | <English> | <pronunciation, optional>
+
+[vocab]
+vocab: <Spanish> | <English> | <pronunciation>
+example: <Spanish sentence> | <English>
+
+[grammar]
+grammar: <short rule in simple English>
+example: <Spanish sentence> | <English>
+
+[quiz]
+quiz: <Question?> | <option A> | <option B> | <option C> | <A/B/C> | <one-line explanation>
+
+[ending]
+Mateo: <short friendly goodbye> | <English>

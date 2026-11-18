@@ -1,0 +1,36 @@
+title: Introducing Yourself
+episode: 1
+level: A1
+topic: Introducing yourself
+scene: cafe
+cast: Emma, Mateo
+variety: latam
+duration: 50 s
+
+[hook]
+Mateo: ¡Hola! ¿Cómo te llamas? | Hi! What's your name? | OH-lah. KOH-moh teh YAH-mahs
+
+[story]
+Emma: Me llamo Emma. ¡Mucho gusto! | My name is Emma. Nice to meet you! | meh YAH-moh EH-mah. MOO-choh GOO-stoh
+Mateo: Mucho gusto, Emma. Soy Mateo. | Nice to meet you, Emma. I'm Mateo. | MOO-choh GOO-stoh, EH-mah. soy mah-TEH-oh
+Emma: ¿De dónde eres? | Where are you from? | deh DOHN-deh EH-rehs
+Mateo: Soy de México. ¿Y tú? | I'm from Mexico. And you? | soy deh MEH-hee-koh. ee too
+Emma: Soy de Chicago. | I'm from Chicago. | soy deh shee-KAH-goh
+
+[vocab]
+vocab: me llamo | my name is | meh YAH-moh
+vocab: ¿cómo te llamas? | what's your name? | KOH-moh teh YAH-mahs
+vocab: mucho gusto | nice to meet you | MOO-choh GOO-stoh
+vocab: soy de… | I'm from… | soy deh
+vocab: ¿de dónde eres? | where are you from? | deh DOHN-deh EH-rehs
+
+[grammar]
+grammar: Soy / eres (from ser) = I am / you are. Use it for who you are and where you're from. Spanish usually drops "yo" and "tú": Soy Emma is enough.
+example: Soy Emma. | I'm Emma.
+example: Eres de México. | You're from Mexico.
+
+[quiz]
+quiz: How do you say "I'm from Chicago"? | Soy de Chicago | Me llamo Chicago | Eres de Chicago | A | Soy de + place = I'm from + place.
+
+[ending]
+Mateo: ¡Hasta la próxima! | See you next time! | AH-stah lah PROHK-see-mah

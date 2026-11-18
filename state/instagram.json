@@ -1,0 +1,14 @@
+{
+  "platform": "instagram",
+  "next_episode": 2,
+  "episodes": [
+    {
+      "number": 1,
+      "slug": "introducing-yourself",
+      "script": "episodes/instagram/001-introducing-yourself.txt",
+      "status": "script_ready",
+      "rendered": false,
+      "published_at": null
+    }
+  ]
+}

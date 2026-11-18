@@ -1,0 +1,321 @@
+{
+  "level": "A1",
+  "format": "instagram",
+  "episodes": [
+    {
+      "number": 1,
+      "slug": "introducing-yourself",
+      "title": "Introducing Yourself",
+      "level": "A1",
+      "scene": "cafe",
+      "vocab_new": [
+        "me llamo",
+        "¿cómo te llamas?",
+        "mucho gusto",
+        "soy de…",
+        "¿de dónde eres?"
+      ],
+      "grammar": "ser: soy / eres; dropping yo and tú",
+      "status": "planned"
+    },
+    {
+      "number": 2,
+      "slug": "saying-hello-and-goodbye",
+      "title": "Saying Hello and Goodbye",
+      "level": "A1",
+      "scene": "street",
+      "vocab_new": [
+        "hola",
+        "buenos días",
+        "buenas tardes",
+        "buenas noches",
+        "adiós",
+        "hasta luego"
+      ],
+      "grammar": "time-of-day greetings are plural",
+      "status": "planned"
+    },
+    {
+      "number": 3,
+      "slug": "how-are-you",
+      "title": "How Are You?",
+      "level": "A1",
+      "scene": "park",
+      "vocab_new": [
+        "¿cómo estás?",
+        "estoy bien",
+        "más o menos",
+        "¿y tú?",
+        "¿qué tal?"
+      ],
+      "grammar": "estar for feelings; tú vs usted (¿cómo está usted?)",
+      "status": "planned"
+    },
+    {
+      "number": 4,
+      "slug": "ordering-coffee",
+      "title": "Ordering Coffee",
+      "level": "A1",
+      "scene": "cafe",
+      "vocab_new": [
+        "un café",
+        "con leche",
+        "sin azúcar",
+        "quisiera…",
+        "¿cuánto es?",
+        "por favor"
+      ],
+      "grammar": "quisiera / me gustaría = polite asking",
+      "status": "planned"
+    },
+    {
+      "number": 5,
+      "slug": "ordering-food-at-a-restaurant",
+      "title": "Ordering Food at a Restaurant",
+      "level": "A1",
+      "scene": "restaurant",
+      "vocab_new": [
+        "la carta",
+        "para mí…",
+        "de beber",
+        "la cuenta",
+        "está delicioso"
+      ],
+      "grammar": "un / una and el / la",
+      "status": "planned"
+    },
+    {
+      "number": 6,
+      "slug": "introducing-your-friends",
+      "title": "Introducing Your Friends",
+      "level": "A1",
+      "scene": "park",
+      "vocab_new": [
+        "te presento a…",
+        "ella es mi amiga",
+        "él es mi amigo",
+        "mucho gusto"
+      ],
+      "grammar": "él / ella; mi / tu",
+      "status": "planned"
+    },
+    {
+      "number": 7,
+      "slug": "numbers-and-prices",
+      "title": "Numbers and Prices",
+      "level": "A1",
+      "scene": "market",
+      "vocab_new": [
+        "uno a veinte",
+        "¿cuánto cuesta?",
+        "es caro",
+        "es barato",
+        "pesos"
+      ],
+      "grammar": "numbers and plurals",
+      "status": "planned"
+    },
+    {
+      "number": 8,
+      "slug": "asking-for-directions",
+      "title": "Asking for Directions",
+      "level": "A1",
+      "scene": "street",
+      "vocab_new": [
+        "¿dónde está…?",
+        "a la derecha",
+        "a la izquierda",
+        "derecho",
+        "cerca",
+        "lejos"
+      ],
+      "grammar": "estar for location",
+      "status": "planned"
+    },
+    {
+      "number": 9,
+      "slug": "at-the-airport",
+      "title": "At the Airport",
+      "level": "A1",
+      "scene": "airport",
+      "vocab_new": [
+        "el pasaporte",
+        "la maleta",
+        "el vuelo",
+        "la puerta",
+        "¿a qué hora sale?"
+      ],
+      "grammar": "tener: tengo / tienes",
+      "status": "planned"
+    },
+    {
+      "number": 10,
+      "slug": "checking-into-a-hotel",
+      "title": "Checking Into a Hotel",
+      "level": "A1",
+      "scene": "hotel",
+      "vocab_new": [
+        "la reservación",
+        "la habitación",
+        "la llave",
+        "¿hay wifi?",
+        "el desayuno"
+      ],
+      "grammar": "hay vs está",
+      "status": "planned"
+    },
+    {
+      "number": 11,
+      "slug": "shopping-for-clothes",
+      "title": "Shopping for Clothes",
+      "level": "A1",
+      "scene": "store",
+      "vocab_new": [
+        "la talla",
+        "¿puedo probarme esto?",
+        "me queda grande",
+        "la camisa",
+        "los zapatos"
+      ],
+      "grammar": "adjective agreement (grande/pequeño, pequeña)",
+      "status": "planned"
+    },
+    {
+      "number": 12,
+      "slug": "talking-about-your-family",
+      "title": "Talking About Your Family",
+      "level": "A1",
+      "scene": "home",
+      "vocab_new": [
+        "mi mamá",
+        "mi papá",
+        "mi hermano",
+        "mi hermana",
+        "tengo dos hermanos"
+      ],
+      "grammar": "tener + family; mi / mis",
+      "status": "planned"
+    },
+    {
+      "number": 13,
+      "slug": "talking-about-your-daily-routine",
+      "title": "Talking About Your Daily Routine",
+      "level": "A1",
+      "scene": "home",
+      "vocab_new": [
+        "me despierto",
+        "desayuno",
+        "trabajo",
+        "me acuesto"
+      ],
+      "grammar": "reflexive verbs (me levanto)",
+      "status": "planned"
+    },
+    {
+      "number": 14,
+      "slug": "asking-someone-on-a-date",
+      "title": "Asking Someone on a Date",
+      "level": "A1",
+      "scene": "cafe",
+      "vocab_new": [
+        "¿quieres salir conmigo?",
+        "¿te gustaría cenar?",
+        "me encantaría",
+        "claro"
+      ],
+      "grammar": "querer + infinitive; me gustaría",
+      "status": "planned"
+    },
+    {
+      "number": 15,
+      "slug": "talking-about-your-hobbies",
+      "title": "Talking About Your Hobbies",
+      "level": "A1",
+      "scene": "park",
+      "vocab_new": [
+        "me gusta leer",
+        "me gusta bailar",
+        "me gustan las películas",
+        "¿y a ti?"
+      ],
+      "grammar": "gustar: me gusta / me gustan",
+      "status": "planned"
+    },
+    {
+      "number": 16,
+      "slug": "describing-your-feelings",
+      "title": "Describing Your Feelings",
+      "level": "A1",
+      "scene": "home",
+      "vocab_new": [
+        "estoy feliz",
+        "estoy cansado/a",
+        "estoy nervioso/a",
+        "tengo hambre",
+        "tengo sueño"
+      ],
+      "grammar": "estar vs tener for feelings",
+      "status": "planned"
+    },
+    {
+      "number": 17,
+      "slug": "making-plans-with-friends",
+      "title": "Making Plans With Friends",
+      "level": "A1",
+      "scene": "street",
+      "vocab_new": [
+        "¿qué haces mañana?",
+        "vamos a…",
+        "¿a qué hora?",
+        "nos vemos"
+      ],
+      "grammar": "ir a + infinitive",
+      "status": "planned"
+    },
+    {
+      "number": 18,
+      "slug": "at-the-supermarket",
+      "title": "At the Supermarket",
+      "level": "A1",
+      "scene": "store",
+      "vocab_new": [
+        "el supermercado",
+        "una bolsa",
+        "un kilo de…",
+        "¿dónde puedo encontrar…?"
+      ],
+      "grammar": "quantities with de",
+      "status": "planned"
+    },
+    {
+      "number": 19,
+      "slug": "visiting-a-doctor",
+      "title": "Visiting a Doctor",
+      "level": "A1",
+      "scene": "clinic",
+      "vocab_new": [
+        "me duele la cabeza",
+        "tengo fiebre",
+        "necesito un médico",
+        "¿es grave?"
+      ],
+      "grammar": "doler: me duele / me duelen",
+      "status": "planned"
+    },
+    {
+      "number": 20,
+      "slug": "common-spanish-mistakes",
+      "title": "Common Spanish Mistakes",
+      "level": "A1",
+      "scene": "cafe",
+      "vocab_new": [
+        "tengo calor (not estoy caliente)",
+        "estoy avergonzado/a (not embarazada)",
+        "tengo 25 años",
+        "estoy cansado/a"
+      ],
+      "grammar": "ser vs estar, tener for age and heat",
+      "status": "planned"
+    }
+  ]
+}
