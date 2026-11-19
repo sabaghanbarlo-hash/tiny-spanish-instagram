@@ -1,0 +1,40 @@
+name: Lesson Reel (quiz format, small.py)
+
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "Script file, e.g. episodes/instagram/001-introducing-yourself.txt"
+        required: true
+        default: "episodes/instagram/001-introducing-yourself.txt"
+  push:
+    paths:
+      - "episodes/instagram/*.txt"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install ffmpeg and fonts
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
+      - run: pip install -r requirements.txt
+      - name: Pick script
+        id: pick
+        run: |
+          if [ -n "${{ github.event.inputs.script }}" ]; then echo "file=${{ github.event.inputs.script }}" >> "$GITHUB_OUTPUT";
+          else echo "file=$(git diff --name-only HEAD~1 HEAD -- 'episodes/instagram/*.txt' | head -1)" >> "$GITHUB_OUTPUT"; fi
+      - name: Check the script
+        run: python small.py --check "${{ steps.pick.outputs.file }}" && python tools/validate_script.py "${{ steps.pick.outputs.file }}"
+      - name: Render (real Spanish voices, no fallback)
+        env:
+          STRICT_VOICE: "1"
+        run: python small.py "${{ steps.pick.outputs.file }}" -o output
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reel
+          path: output/

@@ -1,0 +1,14 @@
+title: Introducing Yourself
+episode: 1
+scene: cafe
+cast: Emma, Mateo
+
+Mateo: ¡Hola! ¿Cómo te llamas? | Hi! What's your name? | OH-lah. KOH-moh teh YAH-mahs
+Emma: Me llamo Emma. ¡Mucho gusto! | My name is Emma. Nice to meet you! | meh YAH-moh EH-mah. MOO-choh GOO-stoh
+Mateo: Mucho gusto, Emma. Soy Mateo. | Nice to meet you, Emma. I'm Mateo. | MOO-choh GOO-stoh, EH-mah. soy mah-TEH-oh
+Emma: ¿De dónde eres? | Where are you from? | deh DOHN-deh EH-rehs
+Mateo: Soy de México. ¿Y tú? | I'm from Mexico. And you? | soy deh MEH-hee-koh. ee too
+
+vocab: me llamo | my name is | meh YAH-moh
+vocab: mucho gusto | nice to meet you | MOO-choh GOO-stoh
+vocab: ¿de dónde eres? | where are you from? | deh DOHN-deh EH-rehs

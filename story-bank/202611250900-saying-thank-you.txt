@@ -1,0 +1,10 @@
+title: Saying Thank You
+scene: street
+cast: Cami, Santi
+
+Cami: ¡Gracias por la ayuda! | Thanks for the help! | GRAH-see-ahs por lah ah-YOO-dah
+Santi: De nada. ¡Que te vaya bien! | You're welcome. Have a good one! | deh NAH-dah. keh teh VAH-yah bee-EN
+
+vocab: gracias | thank you | GRAH-see-ahs
+vocab: de nada | you're welcome | deh NAH-dah
+vocab: ¡que te vaya bien! | have a good one! | keh teh VAH-yah bee-EN

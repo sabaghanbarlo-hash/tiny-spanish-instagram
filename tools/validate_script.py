@@ -6,7 +6,7 @@ import re, sys
 CAST = {"emma", "mateo", "cami", "santi"}
 VOSOTROS = re.compile(r"\b(vosotros|vosotras|vuestro|vuestra|vuestros|vuestras|habláis|tenéis|sois|estáis|vais|queréis)\b", re.I)
 LINE = re.compile(r"^([A-Za-zÀ-ÿ' ]+):\s*(.+)$")
-HEADERS = {"title", "episode", "level", "topic", "scene", "cast", "variety", "duration", "objective", "kind", "weather", "cover"}
+HEADERS = {"title", "episode", "level", "topic", "scene", "cast", "variety", "duration", "objective", "kind", "weather", "cover", "format"}
 SECTIONS = {"hook", "story", "vocab", "grammar", "quiz", "ending", "intro", "listening", "conclusion", "practice"}
 
 
@@ -69,7 +69,7 @@ def validate(path):
             check_spanish(parts[0], where, errors, latam)
         else:
             errors.append(f"{where}: cannot read line: {line[:60]}")
-    for req in ("title", "episode", "level"):
+    for req in ("title",):
         if req not in header:
             errors.append(f"missing header: {req}")
     cast = [c.strip().lower() for c in header.get("cast", "").split(",") if c.strip()]

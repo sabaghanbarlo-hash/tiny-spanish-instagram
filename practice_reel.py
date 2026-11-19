@@ -1,0 +1,256 @@
+"""Practice-style reel generator (side generator, does not touch the original tinyvideo.py system).
+
+Format (~20 s): big hook -> 3 short lines -> "Your turn! Say it out loud!" with a 3-2-1 countdown ->
+Mika says the key phrase -> "Save this / send it to a study buddy". No vocab recap.
+
+Usage:  python practice_reel.py practice/01-introduce-yourself.txt -o output/practice/01.mp4
+Story files use the same format as stories/*.txt; the FIRST `vocab:` line is the practice phrase.
+"""
+import argparse, math, os, re, subprocess, sys, tempfile
+import numpy as np
+from PIL import Image, ImageDraw
+import tinyvideo as tv
+
+W, H, FPS, SR = tv.W, tv.H, tv.FPS, tv.SR
+HOOK = 2.0
+
+
+
+BRAND = tv.BRAND
+RED, GREEN = (214, 83, 79), (79, 154, 110)
+
+
+def sticker(kind, size=88):
+    """Round sticker: red X (mistake), green check (correct) or a brand-coloured microphone (say it out loud)."""
+    s = Image.new("RGBA", (size, size), (0, 0, 0, 0)); d = ImageDraw.Draw(s); c = size // 2
+    d.ellipse((2, 2, size - 3, size - 3), fill={"x": RED, "ok": GREEN}.get(kind, BRAND), outline=(255, 255, 255, 255), width=5)
+    w = (255, 255, 255, 255)
+    if kind == "x":
+        d.line((c - 15, c - 15, c + 15, c + 15), fill=w, width=10); d.line((c - 15, c + 15, c + 15, c - 15), fill=w, width=10)
+    elif kind == "ok":
+        d.line([(c - 18, c + 1), (c - 5, c + 14), (c + 18, c - 14)], fill=w, width=10, joint="curve")
+    else:  # microphone
+        d.rounded_rectangle((c - 9, c - 24, c + 9, c + 6), radius=9, fill=w)
+        d.arc((c - 16, c - 14, c + 16, c + 16), 20, 160, fill=w, width=5)
+        d.line((c, c + 16, c, c + 25), fill=w, width=5); d.line((c - 9, c + 25, c + 9, c + 25), fill=w, width=5)
+    return s
+
+
+def badge(img, kind):
+    s = sticker(kind); img.paste(s, (img.width - 144, 0), s)
+    return img
+
+
+def jcard(tag, color, es, pr, en, es_color, kind):
+    maxw = 840
+    f = next((tv.font(s) for s in (62, 56, 50) if tv.font(s).getlength(es) <= maxw), tv.font(56))
+    prs, ens = tv.font(36, False), tv.font(40, False)
+    parts = [(t, f, es_color, 82) for t in tv.balanced(es, f, maxw)] + [("", None, None, 14)]
+    if pr:
+        parts += [(t, prs, (176, 110, 128), 49) for t in tv.wrap(pr, prs, maxw)] + [("", None, None, 18)]
+    parts += [(t, ens, (90, 78, 80), 54) for t in tv.wrap(en, ens, maxw)]
+    return badge(tv.card_image(tag, color, parts), kind)
+
+
+HANDLE, OTHER_NAME, OTHER_HANDLE, OTHER_FLAG = "@tinyspanish", "French", "@tiny.french", "🇫🇷"
+SERIES = {"practice": "Say it out loud", "mistake": "Never say this"}
+
+
+def cta_parts(follow, mistake, wrong):
+    """End card: alternates between a specific share ask and a follow ask (odd/even episode)."""
+    ink, soft = (52, 40, 44), (120, 98, 104)
+    if follow:
+        return [("Follow for a new phrase", tv.font(58), ink, 84), ("every single day", tv.font(58), ink, 84), (HANDLE, tv.font(46, False), BRAND, 70)]
+    if mistake and wrong:
+        return [("Send this to a friend", tv.font(56), ink, 80), ("who still says", tv.font(44, False), soft, 64), (wrong, tv.font(60), RED, 84)]
+    return [("Send this to a friend", tv.font(60), ink, 90), ("who is learning Spanish", tv.font(44, False), soft, 70)]
+
+
+def caption(meta, lines, vocab, style):
+    k = vocab[0]; wrong = lines[0]["es"].strip("¡!¿? .")
+    pr = f" ({k['pron']})" if k.get("pron") else ""
+    if style == "mistake":
+        head = f"{meta['title']} ☀️\n\nDo not say: {lines[0]['es']} 😅\nSay this instead: {k['es']}{pr} — {k['en']}\n\n"
+        share = f"Send this to a friend who says {wrong} 😅" if len(wrong) <= 16 else "Send this to a friend who is learning Spanish 💌"
+        tags = "#learnspanish #spanishmistakes #spanishbeginner #spanish #espanol #spanishlesson #languagelearning #tinyspanish"
+    else:
+        head = f"{meta['title']} ☀️\n\nSay it out loud:\n• {k['es']}{pr} — {k['en']}\n\n"
+        share = "Send this to a friend who is learning Spanish 💌"
+        tags = "#learnspanish #spanishbeginner #spanish #espanol #spanishlesson #languagelearning #tinyspanish"
+    return head + share + f"\nFollow {HANDLE} for a new phrase every day ☀️\nAlso learning {OTHER_NAME}? {OTHER_HANDLE} {OTHER_FLAG}\n\n" + tags
+
+
+def silence(sec):
+    return np.zeros(int(sec * SR), np.float32)
+
+
+def ring(n, f):
+    s = 260; im = Image.new("RGBA", (s, s), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    d.ellipse((6, 6, s - 6, s - 6), fill=(255, 253, 250, 240))
+    d.arc((14, 14, s - 14, s - 14), -90, -90 + 360 * f, fill=tv.BRAND, width=22)
+    d.text((s / 2, s / 2 + 4), str(n), font=tv.font(130), fill=tv.BRAND, anchor="mm")
+    return im
+
+
+def build(story, rate, dummy, tmp, style="practice"):
+    meta, lines, vocab = tv.parse_story(story)
+    mistake = style == "mistake"
+    if mistake and len(lines) < 2:
+        sys.exit("Mistake & fix needs at least 2 lines: first the MISTAKE, then the correction.")
+    ep = str(meta.get("episode", "1")).strip()
+    follow = ep.isdigit() and int(ep) % 2 == 0   # even episodes ask to follow, odd ones ask to share
+    wrong = lines[0]["es"].strip("¡!¿? .")
+    if len(wrong) > 16:
+        wrong = ""
+    ks = lines[-1]["speaker"] if mistake else tv.VOCAB_SLOT   # who says the key phrase: the one who corrects
+    key = vocab[0]
+    chunks, t = [silence(0.15)], 0.15
+    for i, ln in enumerate(lines):
+        wav = os.path.join(tmp, f"l{i}.wav"); tv.synth(ln["es"], ln["speaker"], wav, rate, dummy)
+        x = tv.read_wav(wav); ln["start"], ln["end"] = t, t + len(x) / SR
+        chunks += [x, silence(0.25)]; t = ln["end"] + 0.25
+    talk = list(lines)
+    wav = os.path.join(tmp, "turn.wav"); tv.synth("Now you try! Say it the right way!" if mistake else "Your turn! Say it out loud!", "Narrator", wav, "+5%", dummy, voice="en-US-AriaNeural", lang="en")
+    x = tv.read_wav(wav); turn0 = t; chunks += [x, silence(0.3)]; t += len(x) / SR + 0.3
+    cd0 = t   # the characters count 3-2-1 out loud (no silent gap, so viewers keep watching)
+    for k, (word, who) in enumerate((("tres", tv.SLOT_L), ("dos", tv.SLOT_R), ("uno", tv.SLOT_L))):
+        wav = os.path.join(tmp, f"cd{k}.wav"); tv.synth(word, who, wav, "-5%", dummy)
+        x = tv.read_wav(wav)[: int(SR * 0.9)]
+        talk.append(dict(speaker=who, start=t, end=t + len(x) / SR))
+        chunks += [x, silence(1.0 - len(x) / SR)]; t += 1.0
+    wav = os.path.join(tmp, "key.wav"); tv.synth(re.sub(r"[…~]+|\.\.\.", "", key["es"]).strip(" ,"), ks, wav, "-20%", dummy)
+    x = tv.read_wav(wav); key0 = t; talk.append(dict(speaker=ks, start=t, end=t + len(x) / SR)); chunks += [x, silence(0.3)]; t += len(x) / SR + 0.3
+    wav = os.path.join(tmp, "end.wav"); tv.synth(("Now you will not make that mistake! " + ("Follow us for a new phrase every day!" if follow else "Send this to a friend who still does it.")) if mistake else ("Perfect! Follow us for a new phrase every day!" if follow else "Perfect! Send this to a friend who is learning Spanish."), "Narrator", wav, "+5%", dummy, voice="en-US-AriaNeural", lang="en")
+    x = tv.read_wav(wav); end0 = t; chunks += [x, silence(0.6)]; t += len(x) / SR + 0.6
+    total = t
+    audio = np.concatenate(chunks); audio = audio / max(0.01, np.abs(audio).max()) * 0.9
+    n = int(total * FPS); mouth = tv.mouth_levels(audio, n)
+    meta["scene"] = tv.pick_scene(meta, lines)
+    bg, fg = tv.make_scene(meta["scene"], meta)
+    wx = tv.pick_weather(meta, lines, meta["scene"]); wxp = tv.make_weather(wx, meta["scene"]) if wx else None
+    cards = [tv.line_card(l) for l in lines]
+    if mistake:
+        w0, c0 = lines[0], lines[-1]
+        cards[0] = jcard("Oops! Do not say this", RED, w0["es"], w0["pron"], w0["en"], RED, "x")
+        cards[-1] = jcard("Say this instead", GREEN, c0["es"], c0["pron"], c0["en"], (52, 40, 44), "ok")
+    pt = [(key["es"], tv.font(76), (52, 40, 44), 100)] + ([(key["pron"], tv.font(44, False), (176, 110, 128), 62)] if key.get("pron") else []) + [(key["en"], tv.font(46, False), (90, 78, 80), 64)]
+    turn_card = tv.card_image("Your turn!", tv.BRAND, pt, min_h=420)
+    done_card = tv.card_image("Perfect!", (79, 154, 110), pt, min_h=420)
+    if mistake:
+        badge(turn_card, "ok"); badge(done_card, "ok")
+    cta_card = tv.card_image("Tiny Spanish", tv.BRAND, cta_parts(follow, mistake, wrong), min_h=380)
+    banner = tv.hook_banner(meta, f"Tiny Spanish · {SERIES[style]} #{ep}")
+    pills = {(nm, a): tv.pill(tv.CHARS[nm]["label"], tv.CHARS[nm]["accent"] if a else (226, 214, 206), (255, 255, 255) if a else (130, 112, 108)) for nm in tv.CHARS for a in (0, 1)}
+
+    def frame(i):
+        tt = i / FPS; fr = bg.copy()
+        if wx: fr.alpha_composite(tv.wx_layer(wx, wxp, tt, False), (0, tv.WX_Y0))
+        cur = next((k for k, l in enumerate(talk) if l["start"] - 0.02 <= tt <= l["end"] + 0.1), None)
+        for nm, c in tv.CHARS.items():
+            sp = cur is not None and talk[cur]["speaker"] == nm
+            bob = 6 * abs(math.sin(tt * 7)) if sp and mouth[i] else 2 * math.sin(tt * 2 + (0 if nm == tv.SLOT_L else 1.7))
+            blink = ((i + (0 if nm == tv.SLOT_L else 41)) % 97) < 4
+            s = tv.sprite(nm, int(mouth[i]) if sp else 0, blink)
+            fr.paste(s, (c["x"], int(tv.CHAR_Y - bob)), s)
+            p = pills[(nm, int(sp))]; fr.paste(p, (c["x"] + s.width // 2 - p.width // 2, 330), p)
+        fr.paste(fg, (0, tv.TABLE_TOP - 55), fg)
+        if wx: fr.alpha_composite(tv.wx_layer(wx, wxp, tt, True), (0, tv.WX_Y0))
+        if tt >= end0: card, t0 = cta_card, end0
+        elif tt >= key0: card, t0 = done_card, key0
+        elif tt >= turn0: card, t0 = turn_card, turn0
+        else:
+            k = max((k for k, l in enumerate(lines) if tt >= l["start"] - 0.02), default=0); card, t0 = cards[k], lines[k]["start"]
+        f = max(0, min(1, (tt - t0) / 0.18)); dy = int(30 * (1 - f))
+        if f < 1: card = card.copy(); card.putalpha(card.getchannel("A").point(lambda v: int(v * f)))
+        fr.paste(card, (20, tv.CARD_Y - 40 + dy), card)
+        if cd0 <= tt < cd0 + 3.0:
+            u = tt - cd0; r = ring(3 - int(u), 1 - (u - int(u)))
+            fr.paste(r, ((W - r.width) // 2, tv.CARD_Y + 470), r)
+        if tt < HOOK:
+            a = min(1.0, tt / 0.12, (HOOK - tt) / 0.3)
+            if a > 0:
+                b = banner if a >= 1 else banner.copy()
+                if a < 1: b.putalpha(b.getchannel("A").point(lambda v: int(v * a)))
+                fr.paste(b, (40, 130), b)
+        return fr.convert("RGB")
+
+    return meta, lines, audio, n, frame
+
+
+def chip_row(kind, text, w=900):
+    f = tv.font(36)
+    while f.size > 24 and f.getlength(text) > w - 150:
+        f = tv.font(f.size - 2)
+    im = Image.new("RGBA", (w, 84), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    d.rounded_rectangle((0, 0, w - 1, 83), radius=42, fill=(255, 233, 231, 240) if kind == "x" else (230, 245, 235, 240))
+    s = sticker(kind, 64); im.paste(s, (12, 10), s)
+    d.text((100, 42), text, font=f, fill=RED if kind == "x" else (46, 110, 76), anchor="lm")
+    return im
+
+
+def make_cover(story, out, style):
+    """Professional thumbnail for the practice formats (same look as cover.py, but built for the format)."""
+    meta, lines, vocab = tv.parse_story(story); key = vocab[0]; mistake = style == "mistake"
+    meta["scene"] = tv.pick_scene(meta, lines)
+    bg, fg = tv.make_scene(meta["scene"], meta, header=False)
+    fr = bg.copy()
+    ep = f"#{meta['episode']}" if meta.get("episode") else ""
+    badges = [tv.pill("DON'T SAY THIS" if mistake else "SAY IT OUT LOUD", RED if mistake else BRAND)] + ([tv.pill(ep, (60, 45, 48))] if ep else [])
+    total = sum(b.width for b in badges) + 16 * (len(badges) - 1); x = (W - total) // 2
+    for b in badges:
+        fr.paste(b, (x, 150), b); x += b.width + 16
+    for nm, c in tv.CHARS.items():
+        s = tv.sprite(nm, 1, False); fr.paste(s, (c["x"], tv.CHAR_Y + 40), s)
+        p = tv.pill(c["label"], c["accent"]); fr.paste(p, (c["x"] + s.width // 2 - p.width // 2, 370), p)
+    fr.paste(fg, (0, tv.TABLE_TOP - 15), fg)
+    for size in (112, 100, 88, 76, 64):
+        f = tv.font(size); ls = tv.wrap(meta["title"], f, 820)
+        if len(ls) <= 3:
+            break
+    parts = [(t, f, (52, 40, 44), int(size * 1.18)) for t in ls]
+    sf = tv.font(44, False)
+    if mistake:
+        parts += [("", None, None, 36), ("Don't make this mistake", sf, RED, 60)]
+    else:
+        pf = tv.font(64)
+        while pf.size > 40 and pf.getlength(key["es"]) > 820:
+            pf = tv.font(pf.size - 4)
+        parts += [("", None, None, 30), (key["es"], pf, BRAND, 88), (f'{key["pron"]} = {key["en"]}' if key.get("pron") else key["en"], tv.font(38, False), (120, 98, 104), 58)]
+    card = tv.card_image("Common mistake" if mistake else "Spanish practice", RED if mistake else BRAND, parts, min_h=470)
+    badge(card, "x" if mistake else "mic")
+    fr.paste(card, (20, 1020), card)
+    if mistake:
+        y = 1020 + card.height + 4
+        for kind, txt in (("x", f'{lines[0]["es"]} = {lines[0]["en"]}'), ("ok", f'{key["es"]} = {key["en"]}')):
+            im = chip_row(kind, txt); fr.paste(im, ((W - im.width) // 2, y), im); y += 100
+    fr.convert("RGB").save(out, quality=90, optimize=True)
+    print("Wrote", out)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("story"); ap.add_argument("-o", "--out", default="output/practice/video.mp4")
+    ap.add_argument("--rate", default="-8%"); ap.add_argument("--dummy-audio", action="store_true"); ap.add_argument("--style", choices=["practice", "mistake"]); ap.add_argument("--cover-only", action="store_true")
+    a = ap.parse_args()
+    style = a.style or ("mistake" if re.search(r"^format:\s*mistake", open(a.story, encoding="utf-8").read(), re.I | re.M) else "practice")
+    os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
+    if a.cover_only:
+        make_cover(a.story, os.path.splitext(a.out)[0] + ".jpg", style); return
+    with tempfile.TemporaryDirectory() as tmp:
+        meta, lines, audio, n, frame = build(a.story, a.rate, a.dummy_audio, tmp, style)
+        wav = os.path.join(tmp, "final.wav"); tv.write_wav(wav, audio)
+        p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-i", wav,
+                              "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
+                              "-movflags", "+faststart", "-t", f"{n / FPS:.2f}", a.out], stdin=subprocess.PIPE)
+        for i in range(n):
+            p.stdin.write(frame(i).tobytes())
+        p.stdin.close(); p.wait()
+        print(f"Wrote {a.out} ({n / FPS:.1f}s)")
+    meta2, l2, vocab = tv.parse_story(a.story)
+    cap = caption(meta2, l2, vocab, style)
+    open(os.path.splitext(a.out)[0] + ".caption.txt", "w", encoding="utf-8").write(cap)
+    make_cover(a.story, os.path.splitext(a.out)[0] + ".jpg", style)
+
+
+if __name__ == "__main__":
+    main()

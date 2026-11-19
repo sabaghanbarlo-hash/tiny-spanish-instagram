@@ -1,40 +1,140 @@
-name: Generate Reel
+name: Generate videos
 
 on:
   workflow_dispatch:
     inputs:
-      script:
-        description: "Script file, e.g. episodes/instagram/001-introducing-yourself.txt"
-        required: true
-        default: "episodes/instagram/001-introducing-yourself.txt"
-  push:
-    paths:
-      - "episodes/instagram/*.txt"
+      story:
+        description: "Story file (e.g. stories/01-whats-your-name.txt) or 'all'"
+        default: "all"
+      post:
+        description: "Post to Instagram right after rendering? (true/false). If false, the video joins the daily queue."
+        default: "false"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: render
+  cancel-in-progress: false
 
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+      - name: System dependencies
+        timeout-minutes: 12
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          # Some runner images ship a Microsoft apt source that can answer 403; we don't need it.
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources /etc/apt/sources.list.d/mono-official-stable.list
+          # Every apt call has its own time limit, so a stalled mirror fails fast and is retried
+          # instead of hanging the whole job until the 40 minute timeout.
+          ok=0
+          for i in 1 2 3; do
+            sudo timeout 120 apt-get update -y -o Acquire::Retries=3 -o Acquire::http::Timeout=20 || true
+            if sudo timeout 240 apt-get install -y --no-install-recommends -o Acquire::http::Timeout=20 ffmpeg fonts-dejavu-core fonts-noto-core; then ok=1; break; fi
+            echo "apt attempt $i failed or timed out, retrying..."
+            sudo pkill -f apt-get || true
+            sudo dpkg --configure -a || true
+            sleep 10
+          done
+          if [ "$ok" != 1 ]; then echo "::error::apt install of ffmpeg/fonts failed after 3 attempts - just re-run the workflow"; exit 1; fi
+          ffmpeg -version | head -1
+          fc-list | grep -qi "dejavu" && echo "font OK"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install ffmpeg and fonts
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          cache: pip
       - run: pip install -r requirements.txt
-      - name: Pick script
-        id: pick
-        run: |
-          if [ -n "${{ github.event.inputs.script }}" ]; then echo "file=${{ github.event.inputs.script }}" >> "$GITHUB_OUTPUT";
-          else echo "file=$(git diff --name-only HEAD~1 HEAD -- 'episodes/instagram/*.txt' | head -1)" >> "$GITHUB_OUTPUT"; fi
-      - name: Check the script
-        run: python small.py --check "${{ steps.pick.outputs.file }}" && python tools/validate_script.py "${{ steps.pick.outputs.file }}"
-      - name: Render (real Spanish voices, no fallback)
+      - name: Render
         env:
+          STORY: ${{ github.event.inputs.story }}
           STRICT_VOICE: "1"
-        run: python small.py "${{ steps.pick.outputs.file }}" -o output
-      - uses: actions/upload-artifact@v4
+        run: |
+          mkdir -p output
+          if [ -z "$STORY" ] || [ "$STORY" = "all" ]; then
+            files=$(ls stories/*.txt)
+          elif [ "$STORY" = "lesson-batch" ]; then
+            files=$(ls stories/lesson-*.txt)
+          else
+            files="$STORY"
+          fi
+          for f in $files; do
+            if grep -qiE '^format:[[:space:]]*(practice|mistake)' "$f"; then
+              # Practice mode: short say-it-out-loud reel (practice_reel.py)
+              python practice_reel.py "$f" -o "output/$(basename "${f%.txt}").mp4"
+            else
+              python tinyvideo.py "$f" -o "output/$(basename "${f%.txt}").mp4"
+            fi
+          done
+      - name: Covers (thumbnails)
+        run: |
+          mkdir -p output
+          for f in stories/*.txt; do
+            b=$(basename "${f%.txt}")
+            if grep -qiE '^format:[[:space:]]*story' "$f"; then continue; fi   # Story mode makes its own cover
+            if [ ! -f "output/$b.jpg" ] || [ "$f" = "${STORY:-}" ] || [ "${STORY:-all}" = "all" ]; then
+              python cover.py "$f" "output/$b.jpg" || echo "cover failed for $f"
+            fi
+          done
+        env:
+          STORY: ${{ github.event.inputs.story }}
+      - name: Commit videos
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add output
+          git commit -m "Render videos [skip ci]" || echo "nothing to commit"
+          git pull --rebase || true
+          git push || true
+      - name: Build site
+        run: |
+          mkdir -p site/videos
+          cp -r docs/* site/
+          cp output/*.mp4 site/videos/
+          cp output/*.jpg site/videos/ 2>/dev/null || true
+          mkdir -p site/videos
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: reel
-          path: output/
+          path: site
+
+  deploy:
+    needs: render
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  instagram:
+    needs: deploy
+    if: ${{ github.event.inputs.post == 'true' && github.event.inputs.story != 'all' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish Reel
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          PAGES_BASE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          STORY: ${{ github.event.inputs.story }}
+        run: |
+          if [ -z "$COMPOSIO_API_KEY" ]; then echo "::error::Add the COMPOSIO_API_KEY repository secret to enable Instagram posting."; exit 1; fi
+          python -u publish.py "$STORY" "output/$(basename "${STORY%.txt}").mp4"
+      - name: Mark as posted
+        env:
+          STORY: ${{ github.event.inputs.story }}
+        run: |
+          basename "${STORY%.txt}" >> posted.txt
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add posted.txt
+          git commit -m "Mark as posted [skip ci]"
+          git pull --rebase || true
+          git push

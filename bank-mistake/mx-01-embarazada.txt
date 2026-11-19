@@ -1,0 +1,10 @@
+format: mistake
+title: Never Say "Estoy Embarazada"
+episode: 1
+scene: cafe
+cast: Emma, Mateo
+
+Emma: Estoy embarazada. | I am embarrassed. (WRONG: it means "I'm pregnant"!) | es-TOY em-bah-rah-SAH-dah
+Mateo: Ja, ja. Mejor di: estoy avergonzada. | Haha. Better say: I'm embarrassed. | es-TOY ah-ver-gohn-SAH-dah
+
+vocab: estoy avergonzada | I'm embarrassed | es-TOY ah-ver-gohn-SAH-dah

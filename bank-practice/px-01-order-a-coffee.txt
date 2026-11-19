@@ -1,0 +1,11 @@
+format: practice
+title: Order a Coffee in Spanish
+episode: 1
+scene: cafe
+cast: Emma, Mateo
+
+Mateo: ¡Buenos días! ¿Qué desea? | Good morning! What would you like? | BWEH-nohs DEE-ahs. keh deh-SEH-ah
+Emma: Un café, por favor. | A coffee, please. | oon kah-FEH, por fah-VOR
+Mateo: ¡Claro que sí! | Of course! | KLAH-roh keh SEE
+
+vocab: un café, por favor | a coffee, please | oon kah-FEH, por fah-VOR
