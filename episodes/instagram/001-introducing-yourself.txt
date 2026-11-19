@@ -5,7 +5,7 @@ topic: Introducing yourself
 scene: cafe
 cast: Emma, Mateo
 variety: latam
-duration: 50 s
+hook: How do you introduce yourself in Spanish?
 
 [hook]
 Mateo: ¡Hola! ¿Cómo te llamas? | Hi! What's your name? | OH-lah. KOH-moh teh YAH-mahs
@@ -19,13 +19,16 @@ Emma: Soy de Chicago. | I'm from Chicago. | soy deh shee-KAH-goh
 
 [vocab]
 vocab: me llamo | my name is | meh YAH-moh
-vocab: ¿cómo te llamas? | what's your name? | KOH-moh teh YAH-mahs
+example: Me llamo Emma. | My name is Emma.
 vocab: mucho gusto | nice to meet you | MOO-choh GOO-stoh
-vocab: soy de… | I'm from… | soy deh
+example: Mucho gusto, Mateo. | Nice to meet you, Mateo.
 vocab: ¿de dónde eres? | where are you from? | deh DOHN-deh EH-rehs
+example: ¿De dónde eres, Emma? | Where are you from, Emma?
+vocab: soy de… | I'm from… | soy deh
+example: Soy de Chicago. | I'm from Chicago.
 
 [grammar]
-grammar: Soy / eres (from ser) = I am / you are. Use it for who you are and where you're from. Spanish usually drops "yo" and "tú": Soy Emma is enough.
+grammar: Soy and eres come from ser (to be). Soy = I am, eres = you are. Spanish usually drops "yo" and "tú": Soy Emma is enough.
 example: Soy Emma. | I'm Emma.
 example: Eres de México. | You're from Mexico.
 
