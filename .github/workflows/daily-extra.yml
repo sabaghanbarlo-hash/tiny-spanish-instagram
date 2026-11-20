@@ -10,8 +10,7 @@ name: Daily extra reels (Practice and Mistake & fix)
 
 on:
   schedule:
-    - cron: "47 16 * * *"
-    - cron: "47 0 * * *"
+    - cron: "45 23 * * *"   # 6:45pm EST / 7:45pm EDT: just before the evening learning window
   workflow_dispatch:
     inputs:
       pool:

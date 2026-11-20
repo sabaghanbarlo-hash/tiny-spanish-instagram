@@ -2,7 +2,7 @@ name: Daily reel
 
 on:
   schedule:
-    - cron: "0 9 * * *"
+    - cron: "45 12 * * *"   # 7:45am EST / 8:45am EDT: just before the weekday-morning learning window
   workflow_dispatch:
     inputs:
       check_only:
