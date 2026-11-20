@@ -1,7 +1,7 @@
 name: Daily extra reels (Practice and Mistake & fix)
 
-# Two extra Reels every day, each at its own time (your original daily reel keeps its 09:00 UTC slot):
-#   17:00 UTC  ->  Practice reel          01:00 UTC  ->  Mistake & fix reel
+# Two extra Reels every day, each at its own time (the main queue reel keeps its 12:45 UTC slot):
+#   17:45 UTC  ->  Practice reel (12:45pm EST)      23:45 UTC  ->  Mistake & fix reel (6:45pm EST)
 # GitHub starts scheduled jobs late (often hours). The schedule is only a fallback: an outside timer can start this
 # workflow at the exact minute (see the Run workflow button for the inputs). Only one reel per pool per day is ever posted.
 # Scripts are taken in order from bank-practice/ and bank-mistake/. Each run hands the next unused script to
@@ -10,7 +10,8 @@ name: Daily extra reels (Practice and Mistake & fix)
 
 on:
   schedule:
-    - cron: "45 23 * * *"   # 6:45pm EST / 7:45pm EDT: just before the evening learning window
+    - cron: "45 17 * * *"
+    - cron: "45 23 * * *"
   workflow_dispatch:
     inputs:
       pool:
@@ -25,7 +26,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: tiny-japanese-extra
+  group: tiny-spanish-extra
   cancel-in-progress: false
 
 jobs:
@@ -42,7 +43,7 @@ jobs:
       - name: Pick the next script
         id: pick
         run: |
-          if [ -n "$IN_POOL" ]; then POOL="$IN_POOL"; elif [ "$SCHED" = "47 0 * * *" ]; then POOL=mistake; else POOL=practice; fi
+          if [ -n "$IN_POOL" ]; then POOL="$IN_POOL"; elif [ "$SCHED" = "45 23 * * *" ]; then POOL=mistake; else POOL=practice; fi
           case "$POOL" in practice|mistake) ;; *) echo "::error::pool must be practice or mistake"; exit 1;; esac
           TODAY="$(date -u +%F)"
           if [ "${IN_POST:-true}" != "false" ] && grep -qx "$TODAY $POOL" extra-log.txt 2>/dev/null; then
