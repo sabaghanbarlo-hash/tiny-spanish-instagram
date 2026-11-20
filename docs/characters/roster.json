@@ -1,0 +1,26 @@
+[
+ {
+  "id": "emma",
+  "name": "Emma",
+  "tag": "Beginner",
+  "voice": "female"
+ },
+ {
+  "id": "mateo",
+  "name": "Mateo",
+  "tag": "Native speaker",
+  "voice": "male"
+ },
+ {
+  "id": "cami",
+  "name": "Cami",
+  "tag": "Funny friend",
+  "voice": "female"
+ },
+ {
+  "id": "santi",
+  "name": "Santi",
+  "tag": "Travel guide",
+  "voice": "male"
+ }
+]
