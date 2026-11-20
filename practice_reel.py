@@ -52,7 +52,7 @@ def jcard(tag, color, es, pr, en, es_color, kind):
     return badge(tv.card_image(tag, color, parts), kind)
 
 
-HANDLE, OTHER_NAME, OTHER_HANDLE, OTHER_FLAG = "@tinyspanish", "French", "@tiny.french", "🇫🇷"
+HANDLE, OTHER_NAME, OTHER_HANDLE, OTHER_FLAG = "@tiny.spanishh", "French", "@tiny.french", "🇫🇷"
 SERIES = {"practice": "Say it out loud", "mistake": "Never say this"}
 
 
