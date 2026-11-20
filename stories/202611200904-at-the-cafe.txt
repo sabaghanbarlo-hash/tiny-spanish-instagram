@@ -1,0 +1,12 @@
+title: At the Cafe
+episode: 1
+scene: auto
+cast: emma, mateo
+
+Mateo: ¡Buenos días! ¿Qué desea? | Good morning! What would you like? | BWEH-nohs DEE-ahs. keh deh-SEH-ah
+Emma: Un café, por favor. | A coffee, please. | oon kah-FEH, por fah-VOR
+Mateo: ¡Claro que sí! | Of course! | KLAH-roh keh SEE
+Emma: ¡Muchas gracias! | Thank you very much! | MOO-chahs GRAH-see-ahs
+
+vocab: un café, por favor | a coffee, please | oon kah-FEH, por fah-VOR
+vocab: muchas gracias | thank you very much | MOO-chahs GRAH-see-ahs
