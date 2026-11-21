@@ -22,5 +22,77 @@
   "name": "Santi",
   "tag": "Travel guide",
   "voice": "male"
+ },
+ {
+  "id": "lucia",
+  "name": "Lucía",
+  "tag": "Student",
+  "voice": "female"
+ },
+ {
+  "id": "diego",
+  "name": "Diego",
+  "tag": "Chef",
+  "voice": "male"
+ },
+ {
+  "id": "valentina",
+  "name": "Valentina",
+  "tag": "Doctor",
+  "voice": "female"
+ },
+ {
+  "id": "rosa",
+  "name": "Rosa",
+  "tag": "Abuela",
+  "voice": "female"
+ },
+ {
+  "id": "pepe",
+  "name": "Pepe",
+  "tag": "Abuelo",
+  "voice": "male"
+ },
+ {
+  "id": "carlos",
+  "name": "Carlos",
+  "tag": "Business",
+  "voice": "male"
+ },
+ {
+  "id": "sofia",
+  "name": "Sofía",
+  "tag": "Backpacker",
+  "voice": "female"
+ },
+ {
+  "id": "javi",
+  "name": "Javi",
+  "tag": "Gamer",
+  "voice": "male"
+ },
+ {
+  "id": "paula",
+  "name": "Paula",
+  "tag": "Athlete",
+  "voice": "female"
+ },
+ {
+  "id": "andres",
+  "name": "Andrés",
+  "tag": "Taxi driver",
+  "voice": "male"
+ },
+ {
+  "id": "marisol",
+  "name": "Marisol",
+  "tag": "Singer",
+  "voice": "female"
+ },
+ {
+  "id": "nico",
+  "name": "Nico",
+  "tag": "Little brother",
+  "voice": "male"
  }
 ]

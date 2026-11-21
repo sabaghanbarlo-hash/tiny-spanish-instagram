@@ -3,7 +3,7 @@
 Usage: python tools/validate_script.py script.txt [more.txt ...]   (exit code 1 on errors)"""
 import re, sys
 
-CAST = {"emma", "mateo", "cami", "santi"}
+CAST = {"emma", "mateo", "cami", "santi", "lucia", "diego", "valentina", "rosa", "pepe", "carlos", "sofia", "javi", "paula", "andres", "marisol", "nico"}
 VOSOTROS = re.compile(r"\b(vosotros|vosotras|vuestro|vuestra|vuestros|vuestras|habláis|tenéis|sois|estáis|vais|queréis)\b", re.I)
 LINE = re.compile(r"^([A-Za-zÀ-ÿ' ]+):\s*(.+)$")
 HEADERS = {"title", "episode", "level", "topic", "scene", "cast", "variety", "duration", "objective", "kind", "weather", "cover", "format"}
