@@ -1,0 +1,17 @@
+format: story
+title: A Walk in the Park
+episode: 2
+scene: park
+cast: Cami, Santi
+
+> Cami enters left
+> Santi enters right
+Santi: ¡Hola, Cami! ¿Qué tal? | Hi, Cami! How's it going? | OH-lah KAH-mee, keh TAHL
+Cami: ¡Muy bien! Hace sol hoy. | Very well! It's sunny today. | mooy bee-EN. AH-seh sohl oy
+> Cami looks happy
+Santi: ¿Quieres caminar un poco? | Do you want to walk a little? | kee-EH-rehs kah-mee-NAR oon POH-koh
+> both walk to center
+Cami: ¡Sí, vamos! | Yes, let's go! | see BAH-mohs
+
+vocab: ¿qué tal? | how's it going? | keh TAHL
+vocab: hace sol | it's sunny | AH-seh sohl

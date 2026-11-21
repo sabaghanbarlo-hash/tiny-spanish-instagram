@@ -1,0 +1,13 @@
+format: story
+title: At the Bakery
+episode: 1
+scene: bakery
+cast: Emma, Mateo
+
+Mateo: ¡Buenos días! ¿Qué desea? | Good morning! What would you like? | BWEH-nohs DEE-ahs
+Emma: Un café y un cruasán, por favor. | A coffee and a croissant, please.
+Mateo: Aquí tiene. Son cuatro euros. | Here you go. That's four euros.
+Emma: ¡Muchas gracias! ¡Qué rico! | Thank you very much! How tasty!
+
+vocab: un café, por favor | a coffee, please | oon kah-FEH por fah-VOR
+vocab: ¡qué rico! | how tasty! | keh REE-koh

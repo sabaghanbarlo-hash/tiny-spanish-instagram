@@ -1,3 +1,4 @@
+import re
 #!/usr/bin/env python3
 """Keep the Instagram queue full a few days ahead, from the pre-written scripts in story-bank/.
 
@@ -54,7 +55,9 @@ def to_render():
 
 def check(path):
     """Validate with the renderer the workflow will use: parse the script and draw one frame (no voice, no ffmpeg)."""
-    if os.path.exists("tinyvideo.py"):
+    if re.search(r"^format:\s*story", open(path, encoding="utf-8").read(), re.I | re.M) and os.path.exists("story.py"):
+        cmd = [sys.executable, "story.py", path, "--check"]
+    elif os.path.exists("tinyvideo.py"):
         cmd = [sys.executable, "tinyvideo.py", path, "--preview", os.path.join(tempfile.gettempdir(), "refill-check.png"), "--dummy-audio"]
     else:
         return True

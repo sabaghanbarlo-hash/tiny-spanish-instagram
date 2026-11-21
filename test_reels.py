@@ -3,7 +3,7 @@ import glob, os, subprocess, sys, tempfile
 import tinyvideo as T
 
 def test_roster():
-    assert set(T.ROSTER) == {"emma", "mateo", "cami", "santi"}
+    assert {"emma", "mateo", "cami", "santi", "lucia", "diego", "valentina", "rosa", "pepe", "carlos", "sofia", "javi", "paula", "andres", "marisol", "nico"} <= set(T.ROSTER)
     for c in T.ROSTER.values():
         assert c["voice"].startswith("es-"), c["label"]
         T.render_char(c, 1, False)                       # every character draws
@@ -24,6 +24,13 @@ def test_preview_frame():
     out = os.path.join(tempfile.gettempdir(), "frame.png")
     r = subprocess.run([sys.executable, "tinyvideo.py", "stories/01-introducing-yourself.txt", "--dummy-audio", "--preview", out], capture_output=True, text=True)
     assert r.returncode == 0 and os.path.getsize(out) > 10000, r.stderr
+
+def test_story_mode():
+    for f in sorted(glob.glob("story-examples/*.txt")):
+        r = subprocess.run([sys.executable, "story.py", f, "--check"], capture_output=True, text=True)
+        assert r.returncode == 0, f + r.stdout + r.stderr
+    r = subprocess.run([sys.executable, "story.py", "story-examples/01-at-the-bakery.txt", "--dummy-audio", "--no-video", "-o", tempfile.gettempdir()], capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr[-400:]
 
 if __name__ == "__main__":
     for n, f in sorted(globals().items()):

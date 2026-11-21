@@ -27,7 +27,7 @@ def validate(path):
     errors, header, latam, section = [], {}, True, None
     for i, raw in enumerate(open(path, encoding="utf-8"), 1):
         line = raw.strip()
-        if not line or line.startswith("#") or re.match(r"^hook\s*:", line, re.I):   # a hook: line is the on-screen hook text, not dialogue
+        if not line or line.startswith(("#", ">", "&", "@")) or re.match(r"^hook\s*:", line, re.I):   # blank, comment, story stage direction, or hook text   # a hook: line is the on-screen hook text, not dialogue
             continue
         m = re.match(r"^\[(\w+)\]$", line)
         if m:

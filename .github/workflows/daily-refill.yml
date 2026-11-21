@@ -63,8 +63,12 @@ jobs:
           mkdir -p output
           for f in $RENDER; do
             b=$(basename "${f%.txt}")
-            python tinyvideo.py "$f" -o "output/$b.mp4"
-            python cover.py "$f" "output/$b.jpg" || echo "cover failed for $f"
+            if grep -qiE '^format:[[:space:]]*story' "$f"; then
+              python story.py "$f" -o output
+            else
+              python tinyvideo.py "$f" -o "output/$b.mp4"
+              python cover.py "$f" "output/$b.jpg" || echo "cover failed for $f"
+            fi
             test -f "output/$b.mp4" || { echo "::error::render produced no video for $f"; exit 1; }
           done
       - name: Commit scripts and videos
