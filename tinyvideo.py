@@ -752,12 +752,12 @@ def make_scene(scene, meta, header=True):
             d.line([(x, 0), (x, 250)], fill=(120, 90, 80), width=5)
             d.ellipse((x - 60, 230, x + 60, 300), fill=(255, 214, 120)); d.ellipse((x - 150, 200, x + 150, 420), fill=(255, 226, 150, 40))
         d.rounded_rectangle((120, 380, 960, 560), radius=20, fill=(110, 70, 56))
-        d.text((540, 470), "らーめん  ・  すし  ・  どん", font=font(54), fill=(255, 236, 200), anchor="mm")
+        d.text((540, 470), "TACOS  ·  EMPANADAS  ·  FLAN", font=font(44), fill=(255, 236, 200), anchor="mm")
         for x in range(160, 960, 120):
             d.rounded_rectangle((x, 600, x + 70, 760), radius=14, fill=(214, 70, 70)); d.rectangle((x + 20, 580, x + 50, 600), fill=(250, 220, 120))
     elif scene == "store":
         d.rectangle((0, 300, W, 340), fill=(52, 160, 120)); d.rectangle((0, 340, W, 372), fill=(244, 244, 250))
-        d.text((540, 322), "コンビニ  OPEN 24h", font=font(40), fill="white", anchor="mm")
+        d.text((540, 322), "TIENDA  ABIERTO 24h", font=font(40), fill="white", anchor="mm")
         cols = [(250, 120, 110), (250, 200, 90), (110, 190, 240), (140, 210, 150), (200, 150, 230)]
         for row, y in enumerate((430, 600, 770)):
             d.rectangle((60, y + 70, W - 60, y + 86), fill=(150, 150, 164))
@@ -773,7 +773,7 @@ def make_scene(scene, meta, header=True):
                 d.rectangle((x, y + 150 - hh, x + w, y + 150), fill=rng.choice([(210, 100, 96), (96, 150, 200), (230, 190, 96), (110, 170, 130), (170, 120, 190), (240, 230, 214)])); x += w + 4
     elif scene == "classroom":
         d.rounded_rectangle((120, 290, 960, 690), radius=18, fill=(150, 112, 78)); d.rounded_rectangle((140, 310, 940, 670), radius=10, fill=(52, 98, 80))
-        d.text((540, 420), "にほんご", font=font(110), fill=(244, 244, 236), anchor="mm"); d.text((540, 560), "あ い う え お", font=font(80), fill=(244, 230, 140), anchor="mm")
+        d.text((540, 420), "ESPAÑOL", font=font(110), fill=(244, 244, 236), anchor="mm"); d.text((540, 560), "A  E  I  O  U", font=font(80), fill=(244, 230, 140), anchor="mm")
         d.ellipse((860, 740, 940, 820), fill=(250, 250, 250), outline=(60, 60, 70), width=6); d.line([(900, 780), (900, 750)], fill=(60, 60, 70), width=5); d.line([(900, 780), (922, 790)], fill=(60, 60, 70), width=5)
     elif scene == "home":
         d.rounded_rectangle((90, 290, 470, 690), radius=24, fill=(255, 255, 255)); d.rounded_rectangle((108, 308, 452, 672), radius=16, fill=(205, 232, 244))
@@ -784,7 +784,7 @@ def make_scene(scene, meta, header=True):
     elif scene == "airport":
         d.rectangle((0, 280, W, 760), fill=(176, 212, 244)); d.polygon([(0, 760), (W, 560), (W, 760)], fill=(160, 200, 236))
         d.polygon([(250, 500), (640, 470), (700, 430), (730, 440), (690, 500), (800, 520), (790, 540), (260, 540)], fill=(250, 250, 255))
-        d.rounded_rectangle((60, 290, 1020, 380), radius=18, fill=(40, 52, 80)); d.text((540, 335), "くうこう  Airport", font=font(48), fill=(250, 220, 110), anchor="mm")
+        d.rounded_rectangle((60, 290, 1020, 380), radius=18, fill=(40, 52, 80)); d.text((540, 335), "AEROPUERTO  Airport", font=font(48), fill=(250, 220, 110), anchor="mm")
         d.rounded_rectangle((100, 700, 260, 860), radius=20, fill=(230, 120, 100)); d.rounded_rectangle((820, 720, 960, 860), radius=18, fill=(100, 150, 200))
     elif scene == "street":
         d.ellipse((780, 220, 920, 360), fill=(255, 244, 200))
@@ -812,14 +812,14 @@ def make_scene(scene, meta, header=True):
         d.rectangle((140, 560, 150, 840), fill=(150, 110, 80)); d.pieslice((40, 450, 260, 640), 180, 360, fill=(240, 100, 90)); d.pieslice((40, 450, 150, 640), 180, 360, fill=(255, 250, 250))
     elif scene == "hospital":
         d.rectangle((60, 290, W - 60, 800), fill=(226, 242, 244))
-        d.rounded_rectangle((60, 290, W - 60, 380), radius=16, fill=(90, 170, 180)); d.text((540, 335), "びょういん  Hospital", font=font(50), fill="white", anchor="mm")
+        d.rounded_rectangle((60, 290, W - 60, 380), radius=16, fill=(90, 170, 180)); d.text((540, 335), "HOSPITAL  Hospital", font=font(50), fill="white", anchor="mm")
         d.rectangle((480, 440, 600, 480), fill=(236, 86, 96)); d.rectangle((520, 400, 560, 520), fill=(236, 86, 96))
         d.rounded_rectangle((120, 600, 330, 800), radius=12, fill=(250, 250, 252), outline=(160, 200, 206), width=6); d.rounded_rectangle((750, 600, 960, 800), radius=12, fill=(250, 250, 252), outline=(160, 200, 206), width=6)
     elif scene == "station":
         for x in range(-40, W, 150):
             hh = rng.randint(180, 380); d.rectangle((x, TABLE_TOP - hh, x + 130, TABLE_TOP), fill=(206, 218, 234))
         d.rounded_rectangle((330, 290, 750, 400), radius=24, fill=(60, 80, 120))
-        d.text((540, 345), "えき  Station", font=font(52), fill="white", anchor="mm")
+        d.text((540, 345), "ESTACIÓN  Station", font=font(52), fill="white", anchor="mm")
     elif scene == "sakura":
         d.line([(0, 330), (300, 280), (600, 340), (1080, 240)], fill=(122, 84, 72), width=20)
         blossoms(d, rng, (0, 170, W, 520), 150)
@@ -828,10 +828,10 @@ def make_scene(scene, meta, header=True):
         d.rectangle((0, 280, W, 302), fill=(96, 62, 46))
         for i, x in enumerate(range(60, 1020, 192)):  # noren curtain
             d.rounded_rectangle((x, 302, x + 174, 520), radius=10, fill=(196, 52, 52))
-            d.text((x + 87, 412), "らーめんや"[i], font=font(88), fill=(255, 244, 228), anchor="mm")
-        paper_lantern(d, 90, 560, 52, (226, 60, 56), "麺", font(52)); paper_lantern(d, 990, 560, 52, (226, 60, 56), "麺", font(52))
+            d.text((x + 87, 412), "TACOS"[i], font=font(88), fill=(255, 244, 228), anchor="mm")
+        paper_lantern(d, 90, 560, 52, (226, 60, 56), "T", font(52)); paper_lantern(d, 990, 560, 52, (226, 60, 56), "T", font(52))
         d.rounded_rectangle((350, 580, 730, 690), radius=14, fill=(112, 76, 54), outline=(80, 54, 40), width=6)
-        d.text((540, 635), "きょうの おすすめ", font=font(44), fill=(255, 236, 200), anchor="mm")
+        d.text((540, 635), "HOY: ESPECIAL", font=font(44), fill=(255, 236, 200), anchor="mm")
         ramen_bowl(d, 250, 800); ramen_bowl(d, 830, 800)
     elif scene == "shrine":
         for x in (70, 200, 880, 1010):  # pines
@@ -870,7 +870,7 @@ def make_scene(scene, meta, header=True):
         for x in range(60, W, 120):
             y0 = 300 + int(36 * math.sin(x / 170)) + 4
             d.ellipse((x - 30, y0, x + 30, y0 + 74), fill=rng.choice([(236, 70, 64), (250, 170, 60)])); d.rectangle((x - 12, y0 - 4, x + 12, y0 + 4), fill=(60, 44, 50))
-        for sx, name, awn in ((30, "きんぎょ", (236, 70, 64)), (700, "やきそば", (70, 150, 230))):  # food stalls
+        for sx, name, awn in ((30, "JUEGOS", (236, 70, 64)), (700, "ELOTES", (70, 150, 230))):  # food stalls
             d.rectangle((sx, 650, sx + 350, 885), fill=(80, 56, 56))
             for i in range(7):
                 col = awn if i % 2 == 0 else (255, 250, 246)
@@ -880,7 +880,7 @@ def make_scene(scene, meta, header=True):
         for _ in range(70):
             x, y = rng.randint(0, W), rng.randint(130, 420); d.rectangle((x, y, x + 4, y + 4), fill=rng.choice([(255, 255, 255), (140, 200, 255), (255, 150, 220)]))
         d.rounded_rectangle((90, 285, 990, 375), radius=22, fill=(24, 20, 60), outline=(255, 90, 200), width=8)
-        d.text((540, 330), "ゲームセンター", font=font(56), fill=(255, 230, 90), anchor="mm")
+        d.text((540, 330), "VIDEOJUEGOS", font=font(56), fill=(255, 230, 90), anchor="mm")
         for x, col in ((40, (255, 90, 160)), (300, (80, 220, 240)), (560, (250, 210, 80)), (820, (160, 120, 255))):
             d.rounded_rectangle((x, 430, x + 220, 885), radius=18, fill=(34, 30, 78), outline=col, width=6)
             d.rectangle((x + 16, 448, x + 204, 500), fill=col)
@@ -890,7 +890,7 @@ def make_scene(scene, meta, header=True):
             d.line([(x + 70, 745), (x + 70, 710)], fill=(200, 200, 210), width=8); d.ellipse((x + 54, 686, x + 86, 718), fill=(236, 64, 64))
             d.ellipse((x + 120, 722, x + 148, 750), fill=(80, 220, 120)); d.ellipse((x + 158, 700, x + 186, 728), fill=(250, 210, 80))
     elif scene == "aquarium":
-        d.rounded_rectangle((330, 282, 750, 342), radius=18, fill=(20, 60, 110)); d.text((540, 312), "すいぞくかん", font=font(38), fill=(220, 240, 250), anchor="mm")
+        d.rounded_rectangle((330, 282, 750, 342), radius=18, fill=(20, 60, 110)); d.text((540, 312), "ACUARIO", font=font(38), fill=(220, 240, 250), anchor="mm")
         d.rounded_rectangle((60, 352, 1020, 840), radius=40, fill=(24, 116, 184), outline=(214, 236, 246), width=14)
         d.polygon([(180, 366), (280, 366), (420, 826), (300, 826)], fill=(36, 134, 200)); d.polygon([(560, 366), (680, 366), (800, 826), (680, 826)], fill=(36, 134, 200))
         d.ellipse((250, 540, 760, 680), fill=(96, 126, 170)); d.ellipse((260, 620, 750, 682), fill=(190, 208, 230))
@@ -906,7 +906,7 @@ def make_scene(scene, meta, header=True):
         for i, x in enumerate(range(60, 1020, 60)):  # wooden fence
             d.rectangle((x, 306, x + 54, 640), fill=(150, 104, 72) if i % 2 == 0 else (132, 90, 62))
         d.rectangle((40, 284, 1040, 312), fill=(100, 66, 48)); d.rectangle((40, 630, 1040, 660), fill=(100, 66, 48))
-        d.rounded_rectangle((440, 330, 640, 560), radius=8, fill=(52, 96, 170)); d.text((540, 445), "ゆ", font=font(150), fill=(255, 255, 255), anchor="mm")
+        d.rounded_rectangle((440, 330, 640, 560), radius=8, fill=(52, 96, 170)); d.text((540, 445), "SPA", font=font(110), fill=(255, 255, 255), anchor="mm")
         d.ellipse((40, 670, 1040, 940), fill=(132, 206, 226))
         for t in range(180, 361, 8):
             sx, sy = 540 + int(500 * math.cos(math.radians(t))), 805 + int(135 * math.sin(math.radians(t))); r = rng.randint(18, 30)
@@ -935,7 +935,7 @@ def make_scene(scene, meta, header=True):
         for i in range(10):  # striped awning
             col = (240, 150, 170) if i % 2 == 0 else (255, 250, 246)
             d.rectangle((40 + i * 100, 280, 40 + (i + 1) * 100, 330), fill=col); d.pieslice((40 + i * 100, 300, 40 + (i + 1) * 100, 360), 0, 180, fill=col)
-        d.rounded_rectangle((340, 390, 740, 480), radius=20, fill=(120, 76, 52)); d.text((540, 435), "パンや", font=font(64), fill=(255, 236, 200), anchor="mm")
+        d.rounded_rectangle((340, 390, 740, 480), radius=20, fill=(120, 76, 52)); d.text((540, 435), "PANADERÍA", font=font(46), fill=(255, 236, 200), anchor="mm")
         d.rectangle((60, 540, 1020, 850), fill=(246, 226, 196))
         for y in (690, 830):
             d.rectangle((60, y, 1020, y + 16), fill=(150, 104, 72))
@@ -971,7 +971,7 @@ def make_scene(scene, meta, header=True):
         for pts, col in (([(540, 340), (150, 880), (330, 880)], (96, 52, 132)), ([(540, 340), (460, 880), (640, 880)], (124, 58, 132)), ([(540, 340), (750, 880), (930, 880)], (96, 52, 132))):
             d.polygon(pts, fill=col)
         d.rounded_rectangle((130, 450, 950, 700), radius=20, fill=(12, 14, 40), outline=(255, 255, 255), width=8)
-        d.text((540, 510), "カラオケ", font=font(70), fill=(255, 230, 90), anchor="mm")
+        d.text((540, 510), "KARAOKE", font=font(70), fill=(255, 230, 90), anchor="mm")
         d.rectangle((200, 580, 880, 600), fill=(255, 150, 210)); d.rectangle((200, 624, 640, 644), fill=(255, 255, 255)); d.rectangle((200, 624, 430, 644), fill=(255, 230, 90))
         d.line([(540, 252), (540, 300)], fill=(200, 204, 224), width=4); d.ellipse((496, 300, 584, 388), fill=(200, 204, 224))
         for k in (322, 344, 366): d.line([(500, k), (580, k)], fill=(150, 154, 180), width=2)
@@ -994,8 +994,8 @@ def make_scene(scene, meta, header=True):
         for x in (30, 330, 630, 930): d.rectangle((x, 412, x + 16, 812), fill=(70, 80, 100))
     elif scene == "izakaya":
         for x in range(0, W, 90): d.line([(x, 280), (x, 800)], fill=(100, 62, 44), width=4)
-        for x in (140, 540, 940): paper_lantern(d, x, 300, 46, (226, 60, 56), "酒", font(48))
-        for i, name in enumerate(("やきとり", "ビール", "からあげ", "おでん", "えだまめ")):
+        for x in (140, 540, 940): paper_lantern(d, x, 300, 46, (226, 60, 56), "S", font(48))
+        for i, name in enumerate(("TACOS", "CERVEZA", "POLLO", "SOPA", "ELOTE")):
             x = 60 + i * 190; d.rectangle((x, 430, x + 170, 520), fill=(250, 238, 214), outline=(150, 100, 70), width=3)
             d.text((x + 85, 475), name, font=font(34), fill=(120, 40, 36), anchor="mm")
         d.rectangle((40, 660, 1040, 680), fill=(84, 54, 40))
@@ -1013,8 +1013,8 @@ def make_scene(scene, meta, header=True):
         d.rounded_rectangle((20, 700, 1060, 870), radius=30, fill=(70, 140, 196))
         for x in (360, 720): d.line([(x, 710), (x, 860)], fill=(50, 110, 160), width=4)
     elif scene == "sushi":
-        d.rounded_rectangle((190, 290, 890, 400), radius=18, fill=(196, 52, 52)); d.text((540, 345), "かいてんずし", font=font(62), fill=(255, 244, 228), anchor="mm")
-        for x in (90, 990): paper_lantern(d, x, 430, 40, (236, 70, 64), "寿", font(44))
+        d.rounded_rectangle((190, 290, 890, 400), radius=18, fill=(196, 52, 52)); d.text((540, 345), "SUSHI", font=font(62), fill=(255, 244, 228), anchor="mm")
+        for x in (90, 990): paper_lantern(d, x, 430, 40, (236, 70, 64), "M", font(44))
         d.rectangle((0, 720, W, 800), fill=(214, 216, 224)); d.rectangle((0, 800, W, 830), fill=(150, 154, 166))
         tops = ((250, 140, 110), (220, 70, 84), (250, 222, 110), (246, 160, 90), (240, 240, 236))
         for i, x in enumerate(range(40, 1060, 150)):
