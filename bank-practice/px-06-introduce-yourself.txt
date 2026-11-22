@@ -1,0 +1,11 @@
+format: practice
+title: Introduce Yourself in Spanish
+episode: 6
+scene: park
+cast: Emma, Mateo
+
+Mateo: ¿Cómo te llamas? | What's your name? | KOH-moh teh YAH-mahs
+Emma: Me llamo Emma. Mucho gusto. | My name is Emma. Nice to meet you. | meh YAH-moh EH-mah. MOO-choh GOOS-toh
+Mateo: Mucho gusto, Emma. | Nice to meet you, Emma. | MOO-choh GOOS-toh, EH-mah
+
+vocab: me llamo… | my name is… | meh YAH-moh

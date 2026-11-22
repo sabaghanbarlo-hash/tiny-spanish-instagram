@@ -1,0 +1,10 @@
+format: mistake
+title: Never Say "Soy Cansada"
+episode: 4
+scene: home
+cast: Emma, Mateo
+
+Emma: Soy cansada. | I am tired. (WRONG: it means "I'm a tiring person"!) | soy kahn-SAH-dah
+Mateo: Ja, ja. Mejor di: estoy cansada. | Haha. Better say: I'm tired. | es-TOY kahn-SAH-dah
+
+vocab: estoy cansada | I'm tired | es-TOY kahn-SAH-dah

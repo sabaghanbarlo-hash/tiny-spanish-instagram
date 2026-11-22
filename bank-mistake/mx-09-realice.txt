@@ -1,0 +1,10 @@
+format: mistake
+title: Never Say "Realicé" for I Realized
+episode: 9
+scene: airport
+cast: Emma, Mateo
+
+Emma: Realicé que perdí mi pasaporte. | I realized I lost my passport. (WRONG: realizar means "to carry out"!) | reh-ah-lee-SEH keh per-DEE mee pah-sah-POR-teh
+Mateo: Mejor di: me di cuenta. | Better say: me di cuenta = I realized. | meh dee KWEN-tah
+
+vocab: me di cuenta | I realized | meh dee KWEN-tah

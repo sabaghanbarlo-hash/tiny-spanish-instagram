@@ -1,0 +1,10 @@
+format: mistake
+title: Never Say "Actualmente" for Actually
+episode: 7
+scene: cafe
+cast: Emma, Mateo
+
+Emma: Actualmente, me gusta el café. | Actually, I like coffee. (WRONG: actualmente means "currently"!) | ahk-too-ahl-MEN-teh, meh GOOS-tah el kah-FEH
+Mateo: Mejor di: en realidad. | Better say: en realidad = actually. | en reh-ah-lee-DAHD
+
+vocab: en realidad | actually | en reh-ah-lee-DAHD

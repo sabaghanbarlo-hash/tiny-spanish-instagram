@@ -1,0 +1,10 @@
+format: mistake
+title: Never Say "Soy 25 Años"
+episode: 3
+scene: park
+cast: Emma, Mateo
+
+Emma: Soy veinticinco años. | I am 25 years. (WRONG: Spanish uses "have" for age!) | soy bayn-tee-SEEN-koh AH-nyohs
+Mateo: Mejor di: tengo veinticinco años. | Better say: I'm 25 years old. (literally: I have 25 years) | meh-HOR dee: TEN-goh bayn-tee-SEEN-koh AH-nyohs
+
+vocab: tengo veinticinco años | I'm 25 years old | TEN-goh bayn-tee-SEEN-koh AH-nyohs

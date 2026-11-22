@@ -1,0 +1,10 @@
+format: mistake
+title: Never Say "Yo Gusto la Pizza"
+episode: 5
+scene: restaurant
+cast: Emma, Mateo
+
+Emma: Yo gusto la pizza. | I like pizza. (WRONG: that's not how "gustar" works!) | yoh GOOS-toh lah PEE-sah
+Mateo: Mejor di: me gusta la pizza. | Better say: I like pizza. (literally: pizza pleases me) | meh GOOS-tah lah PEE-sah
+
+vocab: me gusta la pizza | I like pizza | meh GOOS-tah lah PEE-sah

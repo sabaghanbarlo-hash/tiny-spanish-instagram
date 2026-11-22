@@ -1,0 +1,11 @@
+format: practice
+title: Order Water in Spanish
+episode: 7
+scene: cafe
+cast: Emma, Mateo
+
+Mateo: ¿Qué desea? | What would you like? | keh deh-SEH-ah
+Emma: Agua sin gas, por favor. | Still water, please. | AH-gwah seen gahs, por fah-VOR
+Mateo: Ahora mismo. | Right now. | ah-OH-rah MEES-moh
+
+vocab: agua sin gas, por favor | still water, please | AH-gwah seen gahs, por fah-VOR

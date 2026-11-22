@@ -1,0 +1,11 @@
+format: practice
+title: Where Is the Bathroom in Spanish
+episode: 3
+scene: restaurant
+cast: Emma, Mateo
+
+Emma: ¿Dónde está el baño? | Where is the bathroom? | DOHN-deh es-TAH el BAH-nyoh
+Mateo: Al fondo, a la derecha. | At the back, on the right. | ahl FOHN-doh, ah lah deh-REH-chah
+Emma: ¡Gracias! | Thanks! | GRAH-see-ahs
+
+vocab: ¿dónde está el baño? | where is the bathroom? | DOHN-deh es-TAH el BAH-nyoh

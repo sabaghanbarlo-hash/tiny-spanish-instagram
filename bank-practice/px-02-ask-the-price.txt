@@ -1,0 +1,11 @@
+format: practice
+title: Ask the Price in Spanish
+episode: 2
+scene: mercado
+cast: Emma, Mateo
+
+Mateo: ¿Cuánto cuesta esto? | How much is this? | KWAHN-toh KWES-tah ES-toh
+Emma: Veinte pesos. | Twenty pesos. | BAYN-teh PEH-sohs
+Mateo: ¡Qué barato! | So cheap! | keh bah-RAH-toh
+
+vocab: ¿cuánto cuesta esto? | how much is this? | KWAHN-toh KWES-tah ES-toh

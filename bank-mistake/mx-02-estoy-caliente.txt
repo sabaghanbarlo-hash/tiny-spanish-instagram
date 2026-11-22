@@ -1,0 +1,10 @@
+format: mistake
+title: Never Say "Estoy Caliente"
+episode: 2
+scene: beach
+cast: Emma, Mateo
+
+Emma: Estoy caliente. | I am hot. (WRONG: that has a very different meaning!) | es-TOY kah-lee-EN-teh
+Mateo: Ja, ja. Mejor di: tengo calor. | Haha. Better say: I'm hot (temperature). | TEN-goh kah-LOR
+
+vocab: tengo calor | I'm hot | TEN-goh kah-LOR

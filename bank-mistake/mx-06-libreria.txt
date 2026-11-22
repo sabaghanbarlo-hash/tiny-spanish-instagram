@@ -1,0 +1,10 @@
+format: mistake
+title: Never Say "Librería" for Library
+episode: 6
+scene: bookstore
+cast: Emma, Mateo
+
+Emma: Voy a la librería. | I'm going to the library. (WRONG: librería means bookstore!) | boy ah lah lee-breh-REE-ah
+Mateo: Mejor di: voy a la biblioteca. | Better say: I'm going to the library. | boy ah lah beeb-lee-oh-TEH-kah
+
+vocab: la biblioteca | the library | lah beeb-lee-oh-TEH-kah

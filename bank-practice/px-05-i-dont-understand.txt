@@ -1,0 +1,11 @@
+format: practice
+title: Say I Don't Understand in Spanish
+episode: 5
+scene: street
+cast: Emma, Mateo
+
+Emma: No entiendo. Más despacio, por favor. | I don't understand. Slower, please. | noh en-tee-EN-doh. mahs des-PAH-see-oh, por fah-VOR
+Mateo: Claro. | Sure. | KLAH-roh
+Emma: Gracias. | Thank you. | GRAH-see-ahs
+
+vocab: más despacio, por favor | slower, please | mahs des-PAH-see-oh, por fah-VOR

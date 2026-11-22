@@ -1,0 +1,11 @@
+format: practice
+title: Ask for Directions in Spanish
+episode: 8
+scene: street
+cast: Emma, Mateo
+
+Emma: ¿Dónde está el metro? | Where is the subway? | DOHN-deh es-TAH el MEH-troh
+Mateo: Está cerca. Todo derecho. | It's close. Straight ahead. | es-TAH SER-kah. TOH-doh deh-REH-choh
+Emma: ¡Muchas gracias! | Thanks so much! | MOO-chahs GRAH-see-ahs
+
+vocab: ¿dónde está el metro? | where is the subway? | DOHN-deh es-TAH el MEH-troh

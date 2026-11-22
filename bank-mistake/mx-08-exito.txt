@@ -1,0 +1,10 @@
+format: mistake
+title: Never Say "Éxito" for Exit
+episode: 8
+scene: station
+cast: Emma, Mateo
+
+Emma: ¿Dónde está el éxito? | Where is the exit? (WRONG: éxito means success!) | DOHN-deh es-TAH el EK-see-toh
+Mateo: Mejor di: ¿dónde está la salida? | Better say: where is the exit? | DOHN-deh es-TAH lah sah-LEE-dah
+
+vocab: la salida | the exit | lah sah-LEE-dah

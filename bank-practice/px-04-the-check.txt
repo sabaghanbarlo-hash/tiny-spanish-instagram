@@ -1,0 +1,11 @@
+format: practice
+title: Ask for the Check in Spanish
+episode: 4
+scene: restaurant
+cast: Emma, Mateo
+
+Emma: La cuenta, por favor. | The check, please. | lah KWEN-tah, por fah-VOR
+Mateo: Enseguida. | Right away. | en-seh-GEE-dah
+Emma: Gracias. | Thank you. | GRAH-see-ahs
+
+vocab: la cuenta, por favor | the check, please | lah KWEN-tah, por fah-VOR

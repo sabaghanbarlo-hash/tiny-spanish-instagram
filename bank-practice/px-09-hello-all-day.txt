@@ -1,0 +1,11 @@
+format: practice
+title: Say Hello All Day in Spanish
+episode: 9
+scene: street
+cast: Emma, Mateo
+
+Emma: Buenos días. | Good morning. | BWEH-nohs DEE-ahs
+Mateo: Buenas tardes. | Good afternoon. | BWEH-nahs TAR-dehs
+Emma: Buenas noches. | Good evening. | BWEH-nahs NOH-chehs
+
+vocab: buenos días | good morning | BWEH-nohs DEE-ahs
