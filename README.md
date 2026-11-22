@@ -37,5 +37,20 @@ Posting needs the `COMPOSIO_API_KEY` repo secret and an Instagram account connec
 ## Cast
 `config/characters.json` + `docs/CHARACTER_BIBLE.md`. Drawn in code (`render_char` in `tinyvideo.py`): Emma (ponytail, mint hoodie), Mateo (short hair, terracotta shirt), Cami (space buns, magenta bomber), Santi (curly hair, teal vest, camera). Voices: es-US-Paloma, es-MX-Jorge, es-CO-Salome, es-CO-Gonzalo. `python portraits.py` makes a portrait sheet.
 
+## Story mode (animated)
+Add `format: story` to a script and it becomes an animated story: the two characters walk in, act, and talk, then the vocabulary (and an optional quiz). Plain dialogue is directed for you; or write your own directions (`> Emma enters left`, `& Mateo nods`, `@scene cafe`). Examples in `story-examples/`; check one with `python story.py FILE --check`. Pick the Story format on the studio page.
+
+## Queue and posting times (UTC)
+Every video you make with posting off goes to the queue (`docs/queue.html` shows it, with delete). Posting is automatic:
+| Time | What | Why |
+|---|---|---|
+| 12:45 | next reel from the queue | 7:45 am EST / 8:45 am EDT, just before the weekday-morning learning window |
+| 17:45 | practice reel | midday window |
+| 23:45 | mistake and fix reel | 6:45 pm EST / 7:45 pm EDT, just before the evening window |
+Best-time data for 2026 puts education accounts at weekday mornings and evenings (US Eastern). GitHub runs scheduled jobs a few minutes late.
+
+## Cast and backgrounds
+16 characters (`config/characters.json`): Emma, Mateo, Cami, Santi, Lucía, Diego, Valentina, Rosa, Pepe, Carlos, Sofía, Javi, Paula, Andrés, Marisol, Nico. 22 backgrounds for reels, with Spanish signs.
+
 ## Not ported yet
-Tiny Japanese's animated Story mode (`story.py`, `tinyjp/`), the Instagram Stories scheduler, and the queue page (`docs/queue.html`). Japan-only backgrounds (ramen shop, shrine, onsen, ...) are switched off. Voices have only been tested with test tones here; the first Actions run uses the real voices and stops if they are unavailable.
+Tiny Japanese's Instagram Stories scheduler (`ig-stories`, `storystudio.py`, `publish_story.py`) and the story gallery page. Voices have only been tested with test tones locally; the first Actions run uses the real voices.
