@@ -1,0 +1,11 @@
+title: Hotel Check-In
+cast: Emma, Mateo
+scene: auto
+
+Emma: Buenas tardes. Tengo una reserva a nombre de Emma. | Good afternoon. I have a reservation under Emma. | BWEH-nahs TAR-dehs. TEN-goh OO-nah reh-SER-bah ah NOHM-breh deh EH-mah
+Mateo: Perfecto. ¿Me da su pasaporte, por favor? | Perfect. May I have your passport, please? | per-FEK-toh. meh dah soo pah-sah-POR-teh, por fah-VOR
+Emma: Claro. ¿Hay wifi en la habitación? | Of course. Is there wifi in the room? | KLAH-roh. eye WEE-fee en lah ah-bee-tah-see-OHN
+
+vocab: tengo una reserva | I have a reservation | TEN-goh OO-nah reh-SER-bah
+vocab: el pasaporte | the passport | el pah-sah-POR-teh
+vocab: la habitación | the room | lah ah-bee-tah-see-OHN

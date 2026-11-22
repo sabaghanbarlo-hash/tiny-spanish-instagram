@@ -1,0 +1,11 @@
+title: Wrong Order
+cast: Cami, Santi
+scene: restaurant
+
+Cami: Disculpe, esto no es lo que pedí. ¿Puede cambiarlo? | Excuse me, this isn't what I ordered. Can you change it? | dees-KOOL-peh, ES-toh noh es loh keh peh-DEE. PWEH-deh kahm-bee-AR-loh
+Santi: Perdón, ahora lo cambio. | Sorry, I'll change it now. | per-DOHN, ah-OH-rah loh KAHM-bee-oh
+Cami: No hay problema. Gracias. | No problem. Thanks. | noh eye proh-BLEH-mah. GRAH-see-ahs
+
+vocab: esto no es lo que pedí | this isn't what I ordered | ES-toh noh es loh keh peh-DEE
+vocab: ¿puede cambiarlo? | can you change it? | PWEH-deh kahm-bee-AR-loh
+vocab: no hay problema | no problem | noh eye proh-BLEH-mah

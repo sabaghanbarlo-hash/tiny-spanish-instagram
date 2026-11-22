@@ -1,0 +1,11 @@
+title: Ways to Say I'm Fine
+cast: Emma, Mateo
+scene: park
+
+Mateo: ¿Qué tal, Emma? ¿Cómo estás? | What's up, Emma? How are you? | keh tahl, EH-mah. KOH-moh es-TAHS
+Emma: Más o menos. ¿Y tú? | So-so. And you? | mahs oh MEH-nohs. ee too
+Mateo: Todo bien, gracias. | All good, thanks. | TOH-doh bee-EN, GRAH-see-ahs
+
+vocab: ¿qué tal? | what's up? / how's it going? | keh tahl
+vocab: más o menos | so-so | mahs oh MEH-nohs
+vocab: todo bien | all good | TOH-doh bee-EN

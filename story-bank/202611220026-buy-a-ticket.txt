@@ -1,0 +1,11 @@
+title: Buying a Ticket
+cast: Cami, Santi
+scene: station
+
+Cami: Un boleto a Oaxaca, por favor. | One ticket to Oaxaca, please. | oon boh-LEH-toh ah wah-HAH-kah, por fah-VOR
+Santi: ¿De ida o de ida y vuelta? | One-way or round trip? | deh EE-dah oh deh EE-dah ee BWEL-tah
+Cami: De ida y vuelta. ¿A qué hora sale? | Round trip. What time does it leave? | deh EE-dah ee BWEL-tah. ah keh OH-rah SAH-leh
+
+vocab: un boleto | a ticket | oon boh-LEH-toh
+vocab: de ida y vuelta | round trip | deh EE-dah ee BWEL-tah
+vocab: de ida | one-way | deh EE-dah

@@ -1,0 +1,11 @@
+title: Is the Tip Included?
+cast: Emma, Mateo
+scene: restaurant
+
+Emma: ¿La propina está incluida? | Is the tip included? | lah proh-PEE-nah es-TAH een-kloo-EE-dah
+Mateo: No, es aparte. | No, it's separate. | noh, es ah-PAR-teh
+Emma: Entonces, quédese con el cambio. | Then keep the change. | en-TOHN-sehs, KEH-deh-seh kohn el KAHM-bee-oh
+
+vocab: la propina | the tip | lah proh-PEE-nah
+vocab: ¿está incluida? | is it included? | es-TAH een-kloo-EE-dah
+vocab: quédese con el cambio | keep the change | KEH-deh-seh kohn el KAHM-bee-oh

@@ -1,0 +1,11 @@
+title: See You Tomorrow
+cast: Cami, Santi
+scene: street
+
+Cami: Bueno, ya me voy. Nos vemos mañana. | Well, I'm heading out. See you tomorrow. | BWEH-noh, yah meh boy. nohs VEH-mohs mah-NYAH-nah
+Santi: ¡Hasta mañana! ¡Que descanses! | See you tomorrow! Rest well! | AH-stah mah-NYAH-nah! keh des-KAHN-sehs
+Cami: ¡Igualmente! Chao. | You too! Bye. | ee-gwahl-MEN-teh! CHAH-oh
+
+vocab: nos vemos | see you (around) | nohs VEH-mohs
+vocab: ¡que descanses! | rest well! | keh des-KAHN-sehs
+vocab: chao | bye | CHAH-oh

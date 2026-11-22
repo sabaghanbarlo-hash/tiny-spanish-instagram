@@ -1,0 +1,11 @@
+title: Is This Seat Free?
+cast: Cami, Santi
+scene: cafe
+
+Santi: Disculpa, ¿está libre este asiento? | Excuse me, is this seat free? | dees-KOOL-pah, es-TAH LEE-breh ES-teh ah-see-EN-toh
+Cami: Sí, siéntate. | Yes, sit down. | see, see-EN-tah-teh
+Santi: Gracias. ¿Te molesto? | Thanks. Am I bothering you? | GRAH-see-ahs. teh moh-LES-toh
+
+vocab: ¿está libre? | is it free? | es-TAH LEE-breh
+vocab: el asiento | the seat | el ah-see-EN-toh
+vocab: siéntate | sit down | see-EN-tah-teh

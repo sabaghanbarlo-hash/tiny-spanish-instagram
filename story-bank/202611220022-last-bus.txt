@@ -1,0 +1,11 @@
+title: The Last Bus
+cast: Cami, Santi
+scene: station
+
+Cami: ¿A qué hora sale el último autobús? | What time does the last bus leave? | ah keh OH-rah SAH-leh el OOL-tee-moh ow-toh-BOOS
+Santi: A las once de la noche. | At eleven at night. | ah lahs OHN-seh deh lah NOH-cheh
+Cami: ¡Uf! Tenemos que correr. | Phew! We have to run. | oof! teh-NEH-mohs keh koh-RER
+
+vocab: ¿a qué hora sale…? | what time does… leave? | ah keh OH-rah SAH-leh
+vocab: el último autobús | the last bus | el OOL-tee-moh ow-toh-BOOS
+vocab: a las once | at eleven | ah lahs OHN-seh

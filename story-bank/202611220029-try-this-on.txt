@@ -1,0 +1,11 @@
+title: Can I Try This On?
+cast: Emma, Mateo
+scene: store
+
+Emma: ¿Puedo probarme esto? | Can I try this on? | PWEH-doh proh-BAR-meh ES-toh
+Mateo: Claro. Los probadores están al fondo. | Sure. The fitting rooms are at the back. | KLAH-roh. lohs proh-bah-DOH-res es-TAHN ahl FOHN-doh
+Emma: ¿Tiene una talla más grande? | Do you have a bigger size? | tee-EH-neh OO-nah TAH-yah mahs GRAHN-deh
+
+vocab: ¿puedo probarme esto? | can I try this on? | PWEH-doh proh-BAR-meh ES-toh
+vocab: la talla | the size | lah TAH-yah
+vocab: más grande / más pequeño | bigger / smaller | mahs GRAHN-deh / mahs peh-KEH-nyoh

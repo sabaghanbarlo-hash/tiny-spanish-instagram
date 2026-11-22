@@ -1,0 +1,11 @@
+title: It's Delicious!
+cast: Emma, Mateo
+scene: restaurant
+
+Emma: ¡Mmm! Está riquísimo. | Mmm! It's so delicious. | mmm! es-TAH ree-KEE-see-moh
+Mateo: Me alegra. Es la receta de mi abuela. | I'm glad. It's my grandma's recipe. | meh ah-LEH-grah. es lah reh-SEH-tah deh mee ah-BWEH-lah
+Emma: Me encanta. ¡Está delicioso! | I love it. It's delicious! | meh en-KAHN-tah. es-TAH deh-lee-see-OH-soh
+
+vocab: riquísimo | super tasty | ree-KEE-see-moh
+vocab: me encanta | I love it | meh en-KAHN-tah
+vocab: la receta | the recipe | lah reh-SEH-tah
