@@ -1,0 +1,12 @@
+title: Taking a Taxi
+cast: Cami, Santi
+scene: street
+
+Cami: ¿Cuánto cuesta ir al aeropuerto? | How much to get to the airport? | KWAHN-toh KWES-tah eer ahl ah-eh-roh-PWER-toh
+Santi: Trescientos pesos. | Three hundred pesos. | tres-see-EN-tohs PEH-sohs
+Cami: Está bien. Vamos. | OK. Let's go. | es-TAH bee-EN. VAH-mohs
+Cami: Aquí está bien, gracias. | Here is fine, thanks. | ah-KEE es-TAH bee-EN, GRAH-see-ahs
+
+vocab: ¿cuánto cuesta ir a…? | how much to get to…? | KWAHN-toh KWES-tah eer ah
+vocab: al aeropuerto | to the airport | ahl ah-eh-roh-PWER-toh
+vocab: aquí está bien | here is fine | ah-KEE es-TAH bee-EN

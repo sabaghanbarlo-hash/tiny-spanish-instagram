@@ -1,0 +1,12 @@
+title: Where Is the Bus Stop?
+cast: Emma, Mateo
+scene: street
+
+Emma: ¿Dónde está la parada de autobús? | Where is the bus stop? | DOHN-deh es-TAH lah pah-RAH-dah deh ow-toh-BOOS
+Mateo: Está cerca. Al final de la calle. | It's close. At the end of the street. | es-TAH SER-kah. ahl fee-NAHL deh lah KAH-yeh
+Emma: ¿Este autobús va al centro? | Does this bus go downtown? | ES-teh ow-toh-BOOS bah ahl SEN-troh
+Mateo: Sí, va al centro. | Yes, it goes downtown. | see, bah ahl SEN-troh
+
+vocab: la parada de autobús | the bus stop | lah pah-RAH-dah deh ow-toh-BOOS
+vocab: cerca / lejos | near / far | SER-kah / LEH-hohs
+vocab: ¿va al centro? | does it go downtown? | bah ahl SEN-troh

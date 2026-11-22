@@ -1,0 +1,11 @@
+title: I'm Vegetarian
+cast: Emma, Mateo
+scene: restaurant
+
+Emma: Soy vegetariana. ¿Tiene algo sin carne? | I'm vegetarian. Do you have something without meat? | soy veh-heh-tah-ree-AH-nah. tee-EH-neh AHL-goh seen KAR-neh
+Mateo: Sí, hay quesadillas y ensalada. | Yes, there are quesadillas and salad. | see, eye keh-sah-DEE-yahs ee en-sah-LAH-dah
+Emma: Perfecto. Una quesadilla, por favor. | Perfect. A quesadilla, please. | per-FEK-toh. OO-nah keh-sah-DEE-yah, por fah-VOR
+
+vocab: soy vegetariana | I'm vegetarian (f.) | soy veh-heh-tah-ree-AH-nah
+vocab: sin carne | without meat | seen KAR-neh
+vocab: hay | there is / there are | eye

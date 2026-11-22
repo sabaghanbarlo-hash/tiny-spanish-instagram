@@ -1,0 +1,11 @@
+title: Table for Two
+cast: Cami, Santi
+scene: restaurant
+
+Santi: Buenas noches. ¿Tienen reserva? | Good evening. Do you have a reservation? | BWEH-nahs NOH-chehs. tee-EH-nen reh-SER-bah
+Cami: No, no tenemos. ¿Hay una mesa para dos? | No, we don't. Is there a table for two? | noh, noh teh-NEH-mohs. eye OO-nah MEH-sah PAH-rah dohs
+Santi: Sí, por aquí, por favor. | Yes, this way, please. | see, por ah-KEE, por fah-VOR
+
+vocab: una mesa para dos | a table for two | OO-nah MEH-sah PAH-rah dohs
+vocab: ¿tienen reserva? | do you have a reservation? | tee-EH-nen reh-SER-bah
+vocab: por aquí | this way | por ah-KEE

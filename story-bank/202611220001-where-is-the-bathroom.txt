@@ -1,0 +1,11 @@
+title: Where Is the Bathroom?
+cast: Emma, Mateo
+scene: restaurant
+
+Emma: Disculpa, ¿dónde está el baño? | Excuse me, where is the bathroom? | dees-KOOL-pah, DOHN-deh es-TAH el BAH-nyoh
+Mateo: Al fondo, a la derecha. | At the back, on the right. | ahl FOHN-doh, ah lah deh-REH-chah
+Emma: ¡Mil gracias! | Thanks a lot! | meel GRAH-see-ahs
+
+vocab: ¿dónde está el baño? | where is the bathroom? | DOHN-deh es-TAH el BAH-nyoh
+vocab: a la derecha | on the right | ah lah deh-REH-chah
+vocab: al fondo | at the back | ahl FOHN-doh

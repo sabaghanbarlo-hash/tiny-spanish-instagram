@@ -1,0 +1,11 @@
+title: Do You Speak English?
+cast: Cami, Santi
+scene: street
+
+Cami: Perdón, ¿habla inglés? | Excuse me, do you speak English? | per-DOHN, AH-blah een-GLES
+Santi: Un poquito. ¿En qué le puedo ayudar? | A little. How can I help you? | oon poh-KEE-toh. en keh leh PWEH-doh ah-yoo-DAR
+Cami: Busco la estación. | I'm looking for the station. | BOOS-koh lah es-tah-see-OHN
+
+vocab: ¿habla inglés? | do you speak English? | AH-blah een-GLES
+vocab: un poquito | a little bit | oon poh-KEE-toh
+vocab: busco… | I'm looking for… | BOOS-koh

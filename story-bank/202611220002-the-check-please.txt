@@ -1,0 +1,11 @@
+title: The Check, Please
+cast: Cami, Santi
+scene: restaurant
+
+Cami: ¡Qué rico! La cuenta, por favor. | So tasty! The check, please. | keh REE-koh. lah KWEN-tah, por fah-VOR
+Santi: Enseguida. ¿Efectivo o tarjeta? | Right away. Cash or card? | en-seh-GEE-dah. eh-fek-TEE-voh oh tar-HEH-tah
+Cami: Con tarjeta, por favor. | By card, please. | kohn tar-HEH-tah, por fah-VOR
+
+vocab: la cuenta, por favor | the check, please | lah KWEN-tah, por fah-VOR
+vocab: ¿efectivo o tarjeta? | cash or card? | eh-fek-TEE-voh oh tar-HEH-tah
+vocab: enseguida | right away | en-seh-GEE-dah

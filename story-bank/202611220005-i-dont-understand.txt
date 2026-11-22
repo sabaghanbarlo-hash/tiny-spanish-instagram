@@ -1,0 +1,11 @@
+title: I Don't Understand
+cast: Emma, Mateo
+scene: street
+
+Mateo: Siga derecho y gire a la izquierda. | Go straight and turn left. | SEE-gah deh-REH-choh ee HEE-reh ah lah ees-kee-ER-dah
+Emma: No entiendo. ¿Puede hablar más despacio? | I don't understand. Can you speak more slowly? | noh en-tee-EN-doh. PWEH-deh ah-BLAR mahs des-PAH-see-oh
+Mateo: Claro. Todo derecho. Luego, a la izquierda. | Sure. Straight ahead. Then left. | KLAH-roh. TOH-doh deh-REH-choh. LWEH-goh, ah lah ees-kee-ER-dah
+
+vocab: no entiendo | I don't understand | noh en-tee-EN-doh
+vocab: ¿puede hablar más despacio? | can you speak more slowly? | PWEH-deh ah-BLAR mahs des-PAH-see-oh
+vocab: derecho | straight ahead | deh-REH-choh

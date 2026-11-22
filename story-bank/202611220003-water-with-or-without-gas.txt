@@ -1,0 +1,12 @@
+title: Water, Please
+cast: Emma, Mateo
+scene: cafe
+
+Mateo: ¿Qué desea tomar? | What would you like to drink? | keh deh-SEH-ah toh-MAR
+Emma: Una botella de agua, por favor. | A bottle of water, please. | OO-nah boh-TEH-yah deh AH-gwah, por fah-VOR
+Mateo: ¿Con gas o sin gas? | Sparkling or still? | kohn gahs oh seen gahs
+Emma: Sin gas, gracias. | Still, thanks. | seen gahs, GRAH-see-ahs
+
+vocab: una botella de agua | a bottle of water | OO-nah boh-TEH-yah deh AH-gwah
+vocab: con gas | sparkling | kohn gahs
+vocab: sin gas | still (no bubbles) | seen gahs

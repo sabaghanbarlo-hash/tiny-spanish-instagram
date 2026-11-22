@@ -1,0 +1,12 @@
+title: How Much Is It?
+cast: Cami, Santi
+scene: mercado
+
+Cami: ¿Cuánto cuesta esto? | How much is this? | KWAHN-toh KWES-tah ES-toh
+Santi: Cuarenta pesos. | Forty pesos. | kwah-REN-tah PEH-sohs
+Cami: ¡Es muy caro! ¿Me hace un descuento? | That's so expensive! Can you give me a discount? | es mwee KAH-roh. meh AH-seh oon des-KWEN-toh
+Santi: Treinta y cinco. Última oferta. | Thirty-five. Final offer. | TRAYN-tah ee SEEN-koh. OOL-tee-mah oh-FER-tah
+
+vocab: ¿cuánto cuesta? | how much does it cost? | KWAHN-toh KWES-tah
+vocab: es muy caro | it's very expensive | es mwee KAH-roh
+vocab: ¿me hace un descuento? | can you give me a discount? | meh AH-seh oon des-KWEN-toh
