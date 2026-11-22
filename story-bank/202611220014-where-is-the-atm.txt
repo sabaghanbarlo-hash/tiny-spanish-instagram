@@ -1,0 +1,11 @@
+title: Where Is the ATM?
+cast: Cami, Santi
+scene: street
+
+Cami: Perdón, ¿dónde hay un cajero automático? | Excuse me, where is there an ATM? | per-DOHN, DOHN-deh eye oon kah-HEH-roh ow-toh-MAH-tee-koh
+Santi: Hay uno en la esquina. | There's one on the corner. | eye OO-noh en lah es-KEE-nah
+Cami: Gracias. Necesito efectivo. | Thanks. I need cash. | GRAH-see-ahs. neh-seh-SEE-toh eh-fek-TEE-voh
+
+vocab: el cajero automático | the ATM | el kah-HEH-roh ow-toh-MAH-tee-koh
+vocab: la esquina | the corner | lah es-KEE-nah
+vocab: el efectivo | cash | el eh-fek-TEE-voh

@@ -1,0 +1,11 @@
+title: Sorry vs Excuse Me
+cast: Cami, Santi
+scene: street
+
+Santi: ¡Perdón! No te vi. | Sorry! I didn't see you. | per-DOHN! noh teh vee
+Cami: No pasa nada. | No worries. | noh PAH-sah NAH-dah
+Santi: Con permiso. Voy a pasar. | Excuse me. I'm going to get by. | kohn per-MEE-soh. boy ah pah-SAR
+
+vocab: perdón | sorry (oops) | per-DOHN
+vocab: con permiso | excuse me (to pass) | kohn per-MEE-soh
+vocab: no pasa nada | no worries | noh PAH-sah NAH-dah

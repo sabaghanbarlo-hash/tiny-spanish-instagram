@@ -1,0 +1,11 @@
+title: Take a Photo for Me
+cast: Emma, Mateo
+scene: park
+
+Emma: Disculpa, ¿me puedes tomar una foto? | Excuse me, can you take a photo of me? | dees-KOOL-pah, meh PWEH-des toh-MAR OO-nah FOH-toh
+Mateo: Claro. ¿Así? | Sure. Like this? | KLAH-roh. ah-SEE
+Emma: Un poco más a la izquierda. ¡Perfecto! | A little more to the left. Perfect! | oon POH-koh mahs ah lah ees-kee-ER-dah. per-FEK-toh
+
+vocab: ¿me puedes tomar una foto? | can you take a photo of me? | meh PWEH-des toh-MAR OO-nah FOH-toh
+vocab: a la izquierda | to the left | ah lah ees-kee-ER-dah
+vocab: un poco más | a little more | oon POH-koh mahs

@@ -1,0 +1,11 @@
+title: What Do You Recommend?
+cast: Emma, Mateo
+scene: restaurant
+
+Emma: ¿Qué me recomienda? | What do you recommend? | keh meh reh-koh-mee-EN-dah
+Mateo: La especialidad de la casa. Es muy rica. | The house specialty. It's really good. | lah es-peh-see-ah-lee-DAHD deh lah KAH-sah. es mwee REE-kah
+Emma: Perfecto. Quiero eso. | Perfect. I'll have that. | per-FEK-toh. kee-EH-roh EH-soh
+
+vocab: ¿qué me recomienda? | what do you recommend? | keh meh reh-koh-mee-EN-dah
+vocab: la especialidad de la casa | the house specialty | lah es-peh-see-ah-lee-DAHD deh lah KAH-sah
+vocab: quiero eso | I'll have that | kee-EH-roh EH-soh

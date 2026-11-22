@@ -1,0 +1,11 @@
+title: Nice to Meet You
+cast: Emma, Mateo
+scene: park
+
+Mateo: Hola, soy Mateo. Mucho gusto. | Hi, I'm Mateo. Nice to meet you. | OH-lah, soy mah-TEH-oh. MOO-choh GOOS-toh
+Emma: Encantada. Soy Emma. | Delighted. I'm Emma. | en-kahn-TAH-dah. soy EH-mah
+Mateo: El gusto es mío. | The pleasure is mine. | el GOOS-toh es MEE-oh
+
+vocab: mucho gusto | nice to meet you | MOO-choh GOOS-toh
+vocab: encantado / encantada | delighted | en-kahn-TAH-doh / en-kahn-TAH-dah
+vocab: el gusto es mío | the pleasure is mine | el GOOS-toh es MEE-oh

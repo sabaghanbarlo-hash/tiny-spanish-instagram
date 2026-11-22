@@ -1,0 +1,11 @@
+title: I Don't Feel Well
+cast: Emma, Mateo
+scene: hospital
+
+Emma: No me siento bien. Me duele la cabeza. | I don't feel well. My head hurts. | noh meh see-EN-toh bee-EN. meh DWEH-leh lah kah-BEH-sah
+Mateo: ¿Tienes fiebre? | Do you have a fever? | tee-EH-nes fee-EH-breh
+Emma: Creo que sí. Necesito un médico. | I think so. I need a doctor. | KREH-oh keh see. neh-seh-SEE-toh oon MEH-dee-koh
+
+vocab: no me siento bien | I don't feel well | noh meh see-EN-toh bee-EN
+vocab: me duele la cabeza | my head hurts | meh DWEH-leh lah kah-BEH-sah
+vocab: necesito un médico | I need a doctor | neh-seh-SEE-toh oon MEH-dee-koh

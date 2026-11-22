@@ -1,0 +1,11 @@
+title: Not Spicy, Please
+cast: Cami, Santi
+scene: restaurant
+
+Cami: ¿Pica mucho este plato? | Is this dish very spicy? | PEE-kah MOO-choh ES-teh PLAH-toh
+Santi: Un poco. ¿Lo quieres sin picante? | A little. Do you want it not spicy? | oon POH-koh. loh kee-EH-res seen pee-KAHN-teh
+Cami: Sí, sin picante, por favor. | Yes, not spicy, please. | see, seen pee-KAHN-teh, por fah-VOR
+
+vocab: ¿pica mucho? | is it very spicy? | PEE-kah MOO-choh
+vocab: sin picante | not spicy | seen pee-KAHN-teh
+vocab: un poco | a little | oon POH-koh

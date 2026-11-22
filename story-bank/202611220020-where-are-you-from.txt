@@ -1,0 +1,11 @@
+title: Where Are You From?
+cast: Cami, Santi
+scene: cafe
+
+Santi: ¿De dónde eres? | Where are you from? | deh DOHN-deh EH-res
+Cami: Soy de Medellín, Colombia. ¿Y tú? | I'm from Medellín, Colombia. And you? | soy deh meh-deh-YEEN, koh-LOHM-bee-ah. ee too
+Santi: Soy de Bogotá. | I'm from Bogotá. | soy deh boh-goh-TAH
+
+vocab: ¿de dónde eres? | where are you from? | deh DOHN-deh EH-res
+vocab: soy de… | I'm from… | soy deh
+vocab: ¿y tú? | and you? | ee too

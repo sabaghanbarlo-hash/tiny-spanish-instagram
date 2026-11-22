@@ -1,0 +1,11 @@
+title: Can I Pay by Card?
+cast: Cami, Santi
+scene: store
+
+Cami: ¿Puedo pagar con tarjeta? | Can I pay by card? | PWEH-doh pah-GAR kohn tar-HEH-tah
+Santi: Lo siento, solo efectivo. | Sorry, cash only. | loh see-EN-toh, SOH-loh eh-fek-TEE-voh
+Cami: No hay problema. Voy al cajero. | No problem. I'll go to the ATM. | noh eye proh-BLEH-mah. boy ahl kah-HEH-roh
+
+vocab: ¿puedo pagar con tarjeta? | can I pay by card? | PWEH-doh pah-GAR kohn tar-HEH-tah
+vocab: solo efectivo | cash only | SOH-loh eh-fek-TEE-voh
+vocab: lo siento | I'm sorry | loh see-EN-toh
